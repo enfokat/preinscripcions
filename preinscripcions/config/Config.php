@@ -17,7 +17,7 @@
 
 		//CONTROLADOR Y OPERACION POR DEFECTO
 		private $default_controller = 'Welcome'; //controlador por defecto
-		private $default_method = 'index';		//método por defecto
+		private $default_method = 'listar';		//método por defecto
 
 		//ESTILO POR DEFECTO
 		private $css = 'css/estilo.css'; //fichero CSS con el estilo por defecto
