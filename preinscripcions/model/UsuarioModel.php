@@ -1,14 +1,14 @@
 <?php
 	class UsuarioModel{
 		//PROPIEDADES
-		public $user, $password, $nombre, $privilegio=100, $admin=0, $email, $imagen='';
+		public $id, $dni, $nom, $cognom1, $cognom2, $data_naixement, $estudis, $situacio_laboral, $prestacio, $telefon_mobil, $telefon_fix, $email, $admin=0, $imatge=0;
 			
 		//METODOS
 		//guarda el usuario en la BDD
 		public function guardar(){
 			$user_table = Config::get()->db_user_table;
-			$consulta = "INSERT INTO $user_table(user, password, nombre, privilegio, admin, email, imagen)
-			VALUES ('$this->user','$this->password','$this->nombre',100,0,'$this->email', '$this->imagen');";
+			$consulta = "INSERT INTO $user_table(dni, nom, cognom1, cognom2, data_naixament, estudis, situacio_laboral, prestacio, telefon_mobil, telefon_fix, admin)
+			VALUES ('$this->dni', '$this->nom', '$this->cognom1', '$this->cognom2', '$this->data_naixament', '$this->estudis', '$this->situacio_laboral', '$this->prestacio', '$this->telefon_mobil', '$this->telefon_fix', '$this->admin');";
 				
 			return Database::get()->query($consulta);
 		}

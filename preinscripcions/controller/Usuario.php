@@ -21,22 +21,30 @@
 				$u = new UsuarioModel();
 				$conexion = Database::get();
 				
+				
 				//tomar los datos que vienen por POST
 				//real_escape_string evita las SQL Injections
-				$u->user = $conexion->real_escape_string($_POST['user']);
-				$u->password = MD5($conexion->real_escape_string($_POST['password']));
-				$u->nombre = $conexion->real_escape_string($_POST['nombre']);
+				$u->dni = $conexion->real_escape_string($_POST['dni']);
+				$u->nom = $conexion->real_escape_string($_POST['nom']);
+				$u->cognom1 = $conexion->real_escape_string($_POST['cognom1']);
+				$u->cognom2 = $conexion->real_escape_string($_POST['cognom2']);
+				$u->data_naixament = $conexion->real_escape_string($_POST['data_naixament']);
+				$u->estudis = $conexion->real_escape_string($_POST['estudis']);
+				$u->situacio_laboral = $conexion->real_escape_string($_POST['situacio_laboral']);
+				$u->prestacio = $conexion->real_escape_string($_POST['prestacio']);
+				$u->telefon_mobil = $conexion->real_escape_string($_POST['telefon_mobil']);
+				$u->telefon_fix = $conexion->real_escape_string($_POST['telefon_fix']);
 				$u->email = $conexion->real_escape_string($_POST['email']);
-				$u->imagen = Config::get()->default_user_image;
+	//			$u->imatge = Config::get()->default_user_image;
 				
 				//recuperar y guardar la imagen (solamente si ha sido enviada)
-				if($_FILES['imagen']['error']!=4){
+	//			if($_FILES['imatge']['error']!=4){
 					//el directorio y el tam_maximo se configuran en el fichero config.php
-					$dir = Config::get()->user_image_directory;
-					$tam = Config::get()->user_image_max_size;
+	//				$dir = Config::get()->user_image_directory;
+	//				$tam = Config::get()->user_image_max_size;
 					
-					$upload = new Upload($_FILES['imagen'], $dir, $tam);
-					$u->imagen = $upload->upload_image();
+	//				$upload = new Upload($_FILES['imatge'], $dir, $tam);
+		//			$u->imatge = $upload->upload_image();
 				}
 								
 				//guardar el usuario en BDD
@@ -48,7 +56,7 @@
 				$datos['usuario'] = Login::getUsuario();
 				$datos['mensaje'] = 'Operación de registro completada con éxito';
 				$this->load_view('view/exito.php', $datos);
-			}
+			//}
 		}
 		
 

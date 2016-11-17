@@ -11,7 +11,7 @@
 		private $db_host = 'localhost'; 	//ubicación de la BDD
 		private $db_user = 'root';			//usuario
 		private $db_pass = 'usuarim';				//password
-		private $db_name = 'tmp';		//nombre de la BDD
+		private $db_name = 'preinscripcions';		//nombre de la BDD
 		private $db_charset = 'utf8';	//codificación a utilizar
 		private $db_user_table = 'usuaris'; //nombre para la tabla de usuarios
 

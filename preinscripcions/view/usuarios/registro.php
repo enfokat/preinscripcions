@@ -20,27 +20,59 @@
 		<section id="content">
 			<h2>Formulario de registro</h2>
 			<form method="post" enctype="multipart/form-data" autocomplete="off">
-				<label>User:</label>
-				<input type="text" name="user" required="required" 
+			
+				<label>Nom:</label>
+				<input type="text" name="nom" required="required" 
 					pattern="^[a-zA-Z]\w{2,9}" title="3 a 10 caracteres (numeros, letras o guión bajo), comenzando por letra"/><br/>
 				
-				<label>Password:</label>
-				<input type="password" name="password" required="required" 
+				<label>Cognom1:</label>
+				<input type="text" name="cognom1" required="required" 
 					pattern=".{4,16}" title="4 a 16 caracteres"/><br/>
 				
-				<label>Nombre:</label>
-				<input type="text" name="nombre" required="required"/><br/>
+				<label>Cognom 2::</label>
+				<input type="text" name="cognom2" /><br/>
 				
-				<label>Email:</label>
-				<input type="email" name="email" required="required"/><br/>
+				<label>Data Naixament:</label>
+				<input type="date" name="data_naixament" required="required" placeholder="DD/MM/AAAA"/><br/>
 				
-				<label>Imagen:</label>
-				<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $max_image_size;?>" />		
-				<input type="file" accept="image/*" name="imagen" />
-				<span>max <?php echo intval($max_image_size/1024);?>kb</span><br />
+				<label>DNI:</label>
+				<input type="text" name="dni" required="required" /><br/>
+				
+				<label>Telefon Movil:</label>
+				<input type="text" name="telefon_mobil" required="required"/><br/>
+				
+				<label>Telefon Fix:</label>
+				<input type="text" name="telefon_fix" /><br/>
+				
+				<label>E-mail:</label>
+				<input type="email" name="email" required="required"/><br/>	
+				
+				<label> Nivell d'estudis</label>
+				<select name="estudis">
+					<option></option>
+					<option>Sense Estudis</option>
+					<option>Educació Primaria</option>
+					<option>Educació Secondaria</option>
+					<option>Cicles Formatius Grau Mitjà</option>
+					<option>Cicles Formatius Grau Superior</option>
+					<option>Batxillerat</option>
+					<option>Estudis Universitaris</option>
+				</select><br/>
+				
+				<label>Situació Laboral</label>
+					<input type="radio" name="situacio_laboral" value="Desempleat"/><label>Desempleat</label> 
+					<input type="radio" name="situacio_laboral" value="Empleat"/><label>Empleat</label> 
+				<br/>
+				
+				<label>¿Rep alguna prestació?</label>
+				<input type="radio" name="prestacio" value="si"/><label>SÍ</label> 
+				<input type="radio" name="prestacio" value="no"/><label>NO</label> 
+					
+
 				
 				<label></label>
-				<input type="submit" name="guardar" value="guardar"/><br/>
+				<input type="submit" name="guardar" value="guardar"/>
+				<input type="reset" name="reset" value="Esborrar"/><br/>
 			</form>
 		</section>
 		
