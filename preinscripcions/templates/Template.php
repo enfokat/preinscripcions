@@ -53,7 +53,8 @@
 		public static function menu($usuario){ ?>
 			<nav>
 				<ul class="menu">
-					<li><a href="index.php">Inicio</a></li>
+					<li><a href="index.php?controlador=Welcome&operacion=index">Inicio</a></li>
+					<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
 					<li><a href="index.php?controlador=Usuario&operacion=registro">Registro</a></li>
 				</ul>
 				<?php 
