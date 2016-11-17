@@ -7,7 +7,7 @@ class CursoModel{
 	
 	//recuperar todos los cursos
 	public static function getCursos(){
-		$consulta ="SELECT codi,nom,descripcio,hores FROM cursos;";
+		$consulta ="SELECT codi,id_area,nom,descripcio,hores FROM cursos;";
 			
 		$resultado = Database::get()->query($consulta);
 			

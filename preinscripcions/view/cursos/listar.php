@@ -22,19 +22,21 @@
 			<h1>Listado de cursos</h1>
 			<table id="tabla">
 				<tr>
+					<th>Area Formativa</th>
 					<th>Codi</th>
 					<th>Nom</th>
-					<th>Descripcio</th>
-					<th>Hores</th>
+					<th>Descripció</th>
+					<th>Duració</th>
 					<th></th>
 				</tr>
 		<?php 
-			foreach($cursos as $curso){
+			foreach($cursos as $curso){ 
 				echo "<tr>";
+				echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
 				echo "<td>$curso->codi</td>";
 				echo "<td>$curso->nom</td>";
 				echo "<td>$curso->descripcio</td>";
-				echo "<td>$curso->hores</td>";
+				echo "<td>$curso->hores hores</td>";
 				echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
 				<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
 				echo "</tr>";

@@ -5,7 +5,8 @@
 		//-----------------------------------------------------------------------------
 		//EDITAR ESTOS PARAMETROS PARA CAMBIAR LA CONFIGURACION
 		//URL BASE (ruta donde se encuentre el proyecto, desde el DOCUMENT_ROOT)
-		private $url_base = '/preinscripcions/';
+		//private $url_base = '/preinscripcions/'; //descomentar en linux
+		private $url_base = '../preinscripcions/'; //descomentar en Windows
 		
 		//PARA LA BDD		
 		private $db_host = 'localhost'; 	//ubicación de la BDD

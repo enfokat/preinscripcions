@@ -20,8 +20,8 @@
 		//PONE EL FORMULARIO DE LOGIN
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
-				<label>User:</label><input type="text" name="user" required="required" />
-				<label>Password:</label><input type="password" name="password" required="required"/>
+				<label>DNI:</label><input type="text" name="dni" required="required" />
+				<label>Data Naixemnet:</label><input type="date" name="data_naixement" required="required"/>
 				<input type="submit" name="login" value="Login" />
 			</form>
 		<?php }
@@ -33,7 +33,7 @@
 				<span>
 					Hola 
 					<a href="index.php?controlador=Usuario&operacion=modificacion" title="modificar datos">
-						<?php echo $usuario->nombre;?></a>
+						<?php echo $usuario->nom;?></a>
 					<span class="mini">
 						<?php echo ' ('.$usuario->email.')';?>
 					</span>
@@ -48,9 +48,31 @@
 			</div>
 		<?php }
 		
-		
-		//PONE EL MENU DE LA PAGINA
 		public static function menu($usuario){ ?>
+					<nav>
+						<ul class="menu">
+							<li><a href="index.php?controlador=Welcome&operacion=index">Inicio</a></li>
+							<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
+						<?php if(!$usuario){?>
+							<li><a href="index.php?controlador=Usuario&operacion=registro">Registro</a></li>	
+						<?php } ?>	
+						<?php if($usuario){?>
+							<li><a href="#">Mis Pre-inscripciones</a></li>
+						<?php } ?>	
+						</ul>
+						<?php 
+						//pone el menú del administrador
+						if($usuario && $usuario->admin){	?>
+						<ul class="menu">
+							<li><a href="index.php?controlador=Cpannel&operacion=menu">Panel de Control</a></li>
+						</ul>
+									
+						<?php }	?>
+					</nav>
+				<?php }
+				
+		//PONE EL MENU DE LA PAGINA
+		public static function menu000000($usuario){ ?>
 			<nav>
 				<ul class="menu">
 					<li><a href="index.php?controlador=Welcome&operacion=index">Inicio</a></li>
