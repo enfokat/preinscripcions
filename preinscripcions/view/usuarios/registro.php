@@ -32,7 +32,7 @@
 				<label>Cognom 2:</label>
 				<input type="text" name="cognom2"  onBlur="MaysPrimera(this);" /><br/>
 				
-				<label>Data Naixament:</label>
+				<label>Data Naixement:</label>
 				<input type="date" name="data_naixement" required="required" placeholder="AAAA-MM-DD"/><br/>
 				
 				<label>DNI:</label>
