@@ -19,18 +19,28 @@
 		?>
 
 		<section id="content">
-			<h2>Pre-Inscripcions</h2>
-			<p>Apuntate a los cursos que te interese</p>
-			
-			<p>Es un ejemplo de arquitectura modelo-vista-controlador sencillo para entender los
-			conceptos y poder trabajar con él.</p>
-			
-			<p>A lo largo del curso se desarrollarán varios proyectos de ejemplo usando este pequeño framework,
-			para ir entendiendo los conceptos básicos comunes a este tipo de herramientas de trabajo MVC existentes en PHP.</p>
-			
-			<p>NO ES 100% SEGURO, así que no se debe usar para desarrollos en entornos de producción.</p>
-			
-			<p>En el mismo curso, en el último módulo, utilizaremos otro CodeIgniter para desarrollos más complejos.</p>
+			<h1>Listado de cursos</h1>
+			<table id="tabla">
+				<tr>
+					<th>Codi</th>
+					<th>Nom</th>
+					<th>Descripcio</th>
+					<th>Hores</th>
+					<th></th>
+				</tr>
+		<?php 
+			foreach($cursos as $curso){
+				echo "<tr>";
+				echo "<td>$curso->codi</td>";
+				echo "<td>$curso->nom</td>";
+				echo "<td>$curso->descripcio</td>";
+				echo "<td>$curso->hores</td>";
+				echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
+				<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
+				echo "</tr>";
+			}
+		?>
+			</table>
 		</section>
 		
 		<?php Template::footer();?>

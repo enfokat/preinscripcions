@@ -16,7 +16,7 @@
 		private $db_user_table = 'usuaris'; //nombre para la tabla de usuarios
 
 		//CONTROLADOR Y OPERACION POR DEFECTO
-		private $default_controller = 'Welcome'; //controlador por defecto
+		private $default_controller = 'Curso'; //controlador por defecto
 		private $default_method = 'listar';		//método por defecto
 
 		//ESTILO POR DEFECTO
