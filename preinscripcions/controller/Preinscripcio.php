@@ -8,6 +8,10 @@ class Preinscripcio extends Controller{
 			//inscribir-me
 			require_once 'model/PreinscripcioModel.php';
 		
+			
+			if(!Login::getUsuario())
+				throw new Exception ("has d'estar enregistrat");
+			
 			$preinscripcio = new PreinscripcioModel();
 			$preinscripcio->id_usuari = Login::getUsuario()->id;
 			$preinscripcio->id_curs = $id_curs;
@@ -17,7 +21,7 @@ class Preinscripcio extends Controller{
 			
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['mensaje'] = 'Usuari '.$usuari->nom.' inscrit correctament.';
+			$datos['mensaje'] = "T'has inscrit correctament.";
 			$this->load_view('view/exito.php', $datos);
 	}
 }
