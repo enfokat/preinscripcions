@@ -31,7 +31,7 @@ class Curso extends Controller{
 			if(!$curso)
 				throw new Exception('No se encuentra el curso');
 	
-				//pasar la vivienda a la vista
+				//pasar el curso a la vista
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
 				$datos['curso'] = $curso;

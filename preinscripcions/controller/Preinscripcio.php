@@ -1,29 +1,24 @@
 <?php
-//si no llegan los datos del formulario
-if(empty($_POST['inscribir-me'])){
-	//poner el formulario
-	include 'vista/detalles.php';
+class Preinscripcio extends Controller{
+	
 
-}else{
-	//si llegan los datos del formulario
-	//inscribir-me
-	require_once 'model/PrescripcioModel.php';
+	public function crear($id_curs){
 
-	$preinscripcio = new preinscripcio();
-	$preinscripcio->id_usuari = $_POST['id_usuari'];
-	$preinscripcio->id_curs = $_POST['id_curs'];
-	$preinscripcio->data = $_POST['data'];	
+			//si llegan los datos del formulario
+			//inscribir-me
+			require_once 'model/PreinscripcioModel.php';
+		
+			$preinscripcio = new PreinscripcioModel();
+			$preinscripcio->id_usuari = Login::getUsuario()->id;
+			$preinscripcio->id_curs = $id_curs;
 
-
-	if(!$preinscripcio->inscribir())
-		throw new Exception("No ha pogut inscribir-se");
-
-		//cargar la vista de éxito
-		$mensaje = "L'usuari $usuari->nom $usuari->cognom1 s'ha inscrit correctament.";
-		include 'view/exito.php';
-
-		//OPCIONAL: no cargar la vista de éxito sino ir al listado
-		//include 'controller/listar.php';
+			if(!$preinscripcio->guardar())
+				throw new Exception("No ha pogut inscribir-se");
+			
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['mensaje'] = 'Usuari '.$usuari->nom.' inscrit correctament.';
+			$this->load_view('view/exito.php', $datos);
+	}
 }
-
 ?>

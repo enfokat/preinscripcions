@@ -23,7 +23,7 @@ class CursoModel{
 
 	//recuperar un curso
 	public static function getCurso($id=0){
-		$consulta = "SELECT codi,nom,descripcio,hores FROM cursos WHERE id=$id;";
+		$consulta = "SELECT * FROM cursos WHERE id=$id;";
 			
 		$resultado = Database::get()->query($consulta);
 		if(!$resultado) return null;

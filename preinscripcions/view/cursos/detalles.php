@@ -37,8 +37,8 @@
 					<li><b>Tipus: </b><?php echo $curso->tipus;?></li>
 					<li><b>Requisits: </b><?php echo $curso->requisits;?></li>			
 				</ul>
-				<form method="post" enctype="multipart/form-data">
-					<input type="submit" name="inscribir-me" value="inscribir-me" />
+				<form method="post" action="index.php?controlador=preinscripcio&operacion=crear&parametro=<?php echo $curso->id;?>">
+					<input type="submit" name="guardar" value="inscribir-me" />
 				</form>
 			</article>
 		</section>
