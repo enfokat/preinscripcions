@@ -38,7 +38,7 @@
 		//elimina el usuario de la BDD
 		public function borrar(){
 			$user_table = Config::get()->db_user_table;
-			$consulta = "DELETE FROM $user_table WHERE user='$this->user';";
+			$consulta = "DELETE FROM $user_table WHERE dni='$this->dni';";
 			return Database::get()->query($consulta);
 		}
 		

@@ -22,11 +22,11 @@
 			<p>Por favor, confirma tu solicitud de baja introduciendo el password asociado a tu cuenta.</p>
 		
 			<form method="post" autocomplete="off">
-				<label>User:</label>
-				<input type="text" readonly="readonly" value="<?php echo $usuario->user;?>" /><br/>
+				<label>DNI::</label>
+				<input type="text" readonly="readonly" value="<?php echo $usuario->dni;?>" /><br/>
 				
-				<label>Password:</label>
-				<input type="password" name="password" required="required"/><br/>
+				<label>Data Naixement:</label>
+				<input type="text" name="data_naixement" required="required"/><br/>
 				
 				<label></label>
 				<input type="submit" name="confirmar" value="Confirmar"/><br/>
