@@ -19,11 +19,18 @@
 		public function actualizar(){
 			$user_table = Config::get()->db_user_table;
 			$consulta = "UPDATE $user_table
-							  SET password='$this->password', 
-							  		nombre='$this->nombre', 
-							  		email='$this->email', 
-							  		imagen='$this->imagen'
-							  WHERE user='$this->user';";
+							  SET dni='$this->dni', 
+							  		nom='$this->nom', 
+							  		cognom1='$this->cognom1', 
+							  		cognom2='$this->cognom2',
+							  		data_naixement='$this->data_naixement',
+							  		telefon_mobil='$this->telefon_mobil',
+							  		telefon_fix='$this->telefon_fix',
+							  		email='$this->email',
+							  		estudis='$this->estudis',
+							  		situacio_laboral='$this->situacio_laboral',
+							  		prestacio='$this->prestacio' 		
+							  WHERE id='$this->id';";
 			return Database::get()->query($consulta);
 		}
 		

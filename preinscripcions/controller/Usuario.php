@@ -39,7 +39,7 @@
 				}
 								
 				//guardar el usuario en BDD
-				if(!$u->guardar())
+				if(@!$u->guardar())
 					throw new Exception('No se pudo registrar el usuario');
 				
 				//mostrar la vista de éxito
@@ -84,6 +84,7 @@
 				$u->telefon_mobil = $conexion->real_escape_string($_POST['telefon_mobil']);
 				$u->telefon_fix = $conexion->real_escape_string($_POST['telefon_fix']);
 				$u->email = $conexion->real_escape_string($_POST['email']);
+				var_dump($u);
 				
 				//modificar el usuario en BDD
 				if(!$u->actualizar())

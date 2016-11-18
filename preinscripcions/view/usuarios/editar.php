@@ -49,33 +49,113 @@
 				
 				<label> Nivell d'estudis</label>
 				<select name="estudis"   >
-					<option><?php echo $usuario->estudis;?></option>
-					<option value="0">Sense Estudis</option>
-					<option value="1">Educació Primaria</option>
-					<option value="2">Educació Secondaria</option>
-					<option value="3">Cicles Formatius Grau Mitjà</option>
-					<option value="4">Cicles Formatius Grau Superior</option>
-					<option value="5">Batxillerat</option>
-					<option value="6">Estudis Universitaris</option>
+				<?php 
+						switch ($usuario->estudis) {
+							case 0:
+								echo "<option selected value='0'>Sense Estudis</option>";
+								echo "<option value='1'>Educació Primaria</option>";
+								echo "<option value='2'>Educació Secondaria</option>";
+								echo "<option value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";					
+								break;
+							case 1:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option selected value='1'>Educació Primaria</option>";
+								echo "<option value='2'>Educació Secondaria</option>";
+								echo "<option value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";		
+								break;
+							case 2:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option  value='1'>Educació Primaria</option>";
+								echo "<option  selected value='2'>Educació Secondaria</option>";
+								echo "<option value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";	
+								break;
+							case 3:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option  value='1'>Educació Primaria</option>";
+								echo "<option  value='2'>Educació Secondaria</option>";
+								echo "<option selected value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";
+								break;
+							case 4:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option  value='1'>Educació Primaria</option>";
+								echo "<option value='2'>Educació Secondaria</option>";
+								echo "<option value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option selected value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";
+								break;
+							case 5:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option  value='1'>Educació Primaria</option>";
+								echo "<option   value='2'>Educació Secondaria</option>";
+								echo "<option value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option selected value='5'>Batxillerat</option>";
+								echo "<option value='6'>Estudis Universitaris</option>";
+								break;
+							case 6:
+								echo "<option  value='0'>Sense Estudis</option>";
+								echo "<option  value='1'>Educació Primaria</option>";
+								echo "<option  value='2'>Educació Secondaria</option>";
+								echo "<option  value='3'>Cicles Formatius Grau Mitjà</option>";
+								echo "<option value='4'>Cicles Formatius Grau Superior</option>";
+								echo "<option value='5'>Batxillerat</option>";
+								echo "<option selected value='6'>Estudis Universitaris</option>";
+								break;
+						}
+				?>
 				</select><br/><br/><br/>
 				
 				<label>Situació Laboral</label>
-					<p>La situació registrada es: <?php echo $usuario->situacio_laboral;?></p>
-					<input type="radio" name="situacio_laboral" value="0"/><label>Desempleat</label> 
-					<input type="radio" name="situacio_laboral" value="1"/><label>Empleat</label> 
+				<select name="situacio_laboral">
+					<?php 
+						if($usuario->situacio_laboral == 0){
+							echo "<option  selected value='0'>Desempleat</option>";
+							echo "<option value='1'>Empleat</option>";	
+						}elseif($usuario->situacio_laboral == 1){
+							echo "<option value='0'>Desempleat</option>";
+							echo "<option selected value='1'>Empleat</option>";
+						}				
+					?>
+				</select>
 				<br/><br/><br/>
 				
-				<label>¿Rep alguna prestació?</label>
-				<p>La situació registrada es: <?php echo $usuario->prestacio;?></p>
-				<input type="radio" name="prestacio" value="1"/><label>SÍ</label> 
-				<input type="radio" name="prestacio" value="0"/><label>NO</label> 
-				<br/><br/><br/>		
 
+				<label>¿Rep alguna prestació?</label>
+				<select name="prestacio">
+					<?php 
+						if($usuario->prestacio == 0){
+							echo "<option  selected value='0'>NO</option>";
+							echo "<option value='1'>SÍ</option>";	
+						}elseif($usuario->prestacio == 1){
+							echo "<option value='0'>NO</option>";
+							echo "<option selected value='1'>SÍ</option>";
+						}				
+					?>
+				</select>
+				<br/><br/><br/>		
 				
 				<input type="submit" name="modificar" value="Salvar camvis"/>
 				<input type="reset" name="reset" value="Cancelar"/>
-				<input type="submit" name="baja" value="Baixa del Servei"/>
 			</form>
+				<br/><br/><br/>	
+							<form  method="post">
+										<h3>Baixa del Servei</h3>
+										<p>Si dessitjes esborrar el teu compte d' aquest sistema, fes click en el botó de sota, totes les teves inscripcions seran esborrades automáticament.</p>
+										<input type="submit" value="Baixa del Servei"/>
+							</form>
 		</section>
 		
 		<?php Template::footer();?>
