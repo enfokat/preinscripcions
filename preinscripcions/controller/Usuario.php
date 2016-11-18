@@ -36,7 +36,7 @@
 				$u->telefon_fix = $conexion->real_escape_string($_POST['telefon_fix']);
 				$u->email = $conexion->real_escape_string($_POST['email']);
 				
-				var_dump($u);
+				
 	//			$u->imatge = Config::get()->default_user_image;
 				
 				//recuperar y guardar la imagen (solamente si ha sido enviada)
