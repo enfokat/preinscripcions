@@ -20,17 +20,16 @@
 
 		<section id="content">
 			<h2>Pre-Inscripcions</h2>
-			<p>Apuntate a los cursos que te interese</p>
+			<p>Apunta't als cursos que t'interessin</p>
 			
-			<p>Es un ejemplo de arquitectura modelo-vista-controlador sencillo para entender los
-			conceptos y poder trabajar con él.</p>
+			<p>En aquest centre trobaràs un gran ventall de cursos a la teva mida.</p>
 			
-			<p>A lo largo del curso se desarrollarán varios proyectos de ejemplo usando este pequeño framework,
-			para ir entendiendo los conceptos básicos comunes a este tipo de herramientas de trabajo MVC existentes en PHP.</p>
+			<p>Hi ha cursos de diferents nivells de dificultad que s'adapten als diferents perfils dels alumnes</p>
 			
-			<p>NO ES 100% SEGURO, así que no se debe usar para desarrollos en entornos de producción.</p>
+			<p>Són cursos adaptats a les necessitats del mercat de treball i, a més, donen l'opció de l'obtenció de títols que faciliten la inserció laboral</p>
 			
-			<p>En el mismo curso, en el último módulo, utilizaremos otro CodeIgniter para desarrollos más complejos.</p>
+			<p>per tal poder inscriure't en un curs has d'estar enregistrat.</p>
+			<p>Per enregistrar-te has d'anar a llistar cursos</p>
 		</section>
 		
 		<?php Template::footer();?>

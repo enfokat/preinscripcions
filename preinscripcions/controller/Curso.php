@@ -20,10 +20,10 @@ class Curso extends Controller{
 				$this->load_view('view/cursos/admin/lista_admin.php',$datos);
 	}
 	
-	//ver vivienda
+	//veure curs
 	public function ver($id=0){
 		if(!Login::getUsuario())
-			throw new Exception('Solo para los usuarios registrados');
+			//throw new Exception('Solo para los usuarios registrados');
 	
 			$this->load('model/CursoModel.php');
 			$curso = CursoModel::getCurso($id);
