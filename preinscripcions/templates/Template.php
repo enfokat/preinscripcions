@@ -20,7 +20,7 @@
 		//PONE EL FORMULARIO DE LOGIN
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
-				<label>DNI:</label><input type="text" name="dni" required="required" />
+				<label>DNI:</label><input type="text" name="dni" required="required"  onblur="onBlur="MaysPrimera(this);"/>
 				<label>Data Naixemnet:</label><input type="date" name="data_naixement" required="required"/>
 				<input type="submit" name="login" value="Login" />
 			</form>

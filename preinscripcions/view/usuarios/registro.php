@@ -6,7 +6,7 @@
 		<title>Registro de usuarios</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css;?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css2;?>" />
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="<?php echo Config::get()->js;?>"></script>
 	</head>
 	
 	<body>
@@ -68,7 +68,7 @@
 				<input type="radio" name="prestacio" value="1"/><label>SÍ</label> 
 				<input type="radio" name="prestacio" value="0"/><label>NO</label> 
 					
-
+<br/><br/><br/>
 				
 				<label></label>
 				<input type="submit" name="guardar" value="guardar"/>
