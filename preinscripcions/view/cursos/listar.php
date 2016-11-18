@@ -22,6 +22,7 @@
 			<h1>Listado de cursos</h1>
 			<table id="tabla">
 				<tr>
+					<th></th>
 					<th>Area Formativa</th>
 					<th>Codi</th>
 					<th>Nom</th>
@@ -29,8 +30,9 @@
 					<th>Duració</th>
 					<th></th>
 				</tr>
-		<?php 
-			foreach($cursos as $curso){ 
+	<?php 
+		if(!$usuario){ //poner el formulario de acceso para no registrado
+			foreach($cursos as $curso){
 				echo "<tr>";
 				echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
 				echo "<td>$curso->codi</td>";
@@ -40,8 +42,25 @@
 				echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
 				<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
 				echo "</tr>";
-			}
-		?>
+			}			
+		}else{
+				foreach($cursos as $curso){ //poner el formulario de acceso para  registrado
+					echo "<tr>";
+					echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
+					echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
+					echo "<td>$curso->codi</td>";
+					echo "<td>$curso->nom</td>";
+					echo "<td>$curso->descripcio</td>";
+					echo "<td>$curso->hores hores</td>";
+					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
+					<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
+					echo "</tr>";
+				}				
+		}
+?>
+
+
+
 			</table>
 		</section>
 		
