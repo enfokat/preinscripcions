@@ -51,15 +51,14 @@
 		public static function menu($usuario){ ?>
 					<nav>
 						<ul class="menu">
-							<li><a href="index.php?controlador=Welcome&operacion=index">Inicio</a></li>
+							<li><a href="index.php?controlador=Welcome&operacion=index">Inici</a></li>
 							<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
 						<?php if(!$usuario){?>
-							<li><a href="index.php?controlador=Usuario&operacion=registro">Registro</a></li>	
+							<li><a href="index.php?controlador=Usuario&operacion=registro">Registre</a></li>	
 						<?php } ?>	
 						<?php if($usuario){?>
-							<li><a href="#">Mis Pre-inscripciones</a></li>
-							<li><a href="index.php?controlador=Usuario&operacion=editar&parametro=<?php echo $usuario->id; ?>">Mis Datos</a></li>
-							var_dump($usuario->id);
+							<li><a href="#">Mis Pre-inscripcions</a></li>
+							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Mis Dades</a></li>
 						<?php } ?>	
 						</ul>
 						<?php 
