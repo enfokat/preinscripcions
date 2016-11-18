@@ -22,7 +22,7 @@ class Curso extends Controller{
 	
 	//veure curs
 	public function ver($id=0){
-		if(!Login::getUsuario())
+		//if(!Login::getUsuario())
 			//throw new Exception('Solo para los usuarios registrados');
 	
 			$this->load('model/CursoModel.php');
