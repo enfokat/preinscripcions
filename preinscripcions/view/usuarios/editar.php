@@ -151,10 +151,10 @@
 				<input type="reset" name="reset" value="Cancelar"/>
 			</form>
 				<br/><br/><br/>	
-							<form  method="post">
+							<form  method="post" action="index.php?controlador=Usuario&operacion=baja&parametro=<?php echo $usuario->id; ?>">
 										<h3>Baixa del Servei</h3>
 										<p>Si dessitjes esborrar el teu compte d' aquest sistema, fes click en el botó de sota, totes les teves inscripcions seran esborrades automáticament.</p>
-										<input type="submit" value="Baixa del Servei"/>
+										<input type="submit" name=" baja" value="Baixa del Servei"/>
 							</form>
 		</section>
 		

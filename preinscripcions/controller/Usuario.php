@@ -111,7 +111,7 @@
 			$u = Login::getUsuario();
 			
 			//asegurarse que el usuario está identificado
-			if(!$u) throw new Exception('Debes estar identificado para poder darte de baja');
+			if(!$u) throw new Exception("Per donarte'n de baixa tens d'estar identificat"	);
 			
 			//si no nos están enviando la conformación de baja
 			if(empty($_POST['confirmar'])){	
@@ -123,17 +123,14 @@
 			//si nos están enviando la confirmación de baja
 			}else{
 				//validar password
-				$p = MD5(Database::get()->real_escape_string($_POST['password']));
-				if($u->password != $p) 
-					throw new Exception('El password no coincide, no se puede procesar la baja');
+				$p =Database::get()->real_escape_string($_POST['data_naixement']);
+				if($u->data_naixement != $p) 
+					throw new Exception('La data de naixement es incorrecta, no es pot realitzar la baixa');
 				
 				//de borrar el usuario actual en la BDD
 				if(!$u->borrar())
-					throw new Exception('No se pudo dar de baja');
+					throw new Exception('No es pot realitzar la baixa');
 						
-				//borra la imagen (solamente en caso que no sea imagen por defecto)
-				if($u->imagen!=Config::get()->default_user_image)
-					@unlink($u->imagen); 
 			
 				//cierra la sesion
 				Login::log_out();
@@ -141,7 +138,7 @@
 				//mostrar la vista de éxito
 				$datos = array();
 				$datos['usuario'] = null;
-				$datos['mensaje'] = 'Eliminado OK';
+				$datos['mensaje'] = 'Usuari eliminat correctament';
 				$this->load_view('view/exito.php', $datos);
 			}
 		}
