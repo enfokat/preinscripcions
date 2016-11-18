@@ -48,7 +48,7 @@
 			</div>
 		<?php }
 		
-		public static function menu($usuario){ ?>
+		public static function menu($usuario){ ?> 
 					<nav>
 						<ul class="menu">
 							<li><a href="index.php?controlador=Welcome&operacion=index">Inici</a></li>
