@@ -58,6 +58,8 @@
 						<?php } ?>	
 						<?php if($usuario){?>
 							<li><a href="#">Mis Pre-inscripciones</a></li>
+							<li><a href="index.php?controlador=Usuario&operacion=editar&parametro=<?php echo $usuario->id; ?>">Mis Datos</a></li>
+							var_dump($usuario->id);
 						<?php } ?>	
 						</ul>
 						<?php 
@@ -71,25 +73,7 @@
 					</nav>
 				<?php }
 				
-		//PONE EL MENU DE LA PAGINA
-		public static function menu000000($usuario){ ?>
-			<nav>
-				<ul class="menu">
-					<li><a href="index.php?controlador=Welcome&operacion=index">Inicio</a></li>
-					<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
-					<li><a href="index.php?controlador=Usuario&operacion=registro">Registro</a></li>
-				</ul>
-				<?php 
-				//pone el menú del administrador
-				if($usuario && $usuario->admin){	?>
-				<ul class="menu">
-					<li><a href="#">ADMIN</a></li>
-				</ul>
-							
-				<?php }	?>
-			</nav>
-		<?php }
-		
+	
 		//PONE EL PIE DE PAGINA
 		public static function footer(){	?>
 			<footer>
