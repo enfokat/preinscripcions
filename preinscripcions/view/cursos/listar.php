@@ -20,18 +20,18 @@
 
 		<section id="content">
 			<h1>Listado de cursos</h1>
-			<table id="tabla">
-				<tr>
-					<th></th>
-					<th>Area Formativa</th>
-					<th>Codi</th>
-					<th>Nom</th>
-					<th>Descripció</th>
-					<th>Duració</th>
-					<th></th>
-				</tr>
+			
 	<?php 
 		if(!$usuario){ //poner el formulario de acceso para no registrado
+			echo "<table id='tabla'>";
+			echo "<tr>";			
+			echo "<th>Area Formativa</th>";
+			echo "<th>Codi</th>";
+			echo "<th>Nom</th>";
+			echo "<th>Descripció</th>";
+			echo "<th>Duració</th>";
+			echo "<th></th>";
+			echo "</tr>";			
 			foreach($cursos as $curso){
 				echo "<tr>";
 				echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
@@ -44,6 +44,16 @@
 				echo "</tr>";
 			}			
 		}else{
+			echo "<table id='tabla'>";
+			echo "<tr>";
+			echo "<th></th>";
+			echo "<th>Area Formativa</th>";
+			echo "<th>Codi</th>";
+			echo "<th>Nom</th>";
+			echo "<th>Descripció</th>";
+			echo "<th>Duració</th>";
+			echo "<th></th>";
+			echo "</tr>";			
 				foreach($cursos as $curso){ //poner el formulario de acceso para  registrado
 					echo "<tr>";
 					echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
