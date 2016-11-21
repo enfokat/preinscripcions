@@ -6,6 +6,7 @@
 		<title>Preinscripcions</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css;?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css2;?>" />
+		<script type="text/javascript" src="<?php echo Config::get()->js;?>"></script>
 	</head>
 	
 	<body>
@@ -69,9 +70,7 @@
 		}
 ?>
 
-
-
-			
+	</table>		
 		</section>
 		
 		<?php Template::footer();?>

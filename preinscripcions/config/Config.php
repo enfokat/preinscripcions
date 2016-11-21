@@ -23,6 +23,7 @@
 		//ESTILO POR DEFECTO
 		private $css = 'css/estilo.css'; //fichero CSS con el estilo por defecto
 		private $css2 = 'css/preinscripcions.css'; //fichero CSS personalizado
+		private $js = 'js/script.js'; // carga ficher javascript
 		
 		//OPCIONES PARA LAS IMAGENES
 		private $image_not_found = 'images/no_image.png'; //imagen no encontrada
