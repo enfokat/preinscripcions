@@ -31,18 +31,18 @@
 					<th></th>
 				</tr>	
 		<?php		
-				/*foreach($cursos as $curso){ //poner el formulario de acceso para registrado
+				foreach($preinscripcions as $preinscripcio){ //poner el formulario de acceso para registrado
 					echo "<tr>";
-					echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
-					echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
-					echo "<td>$curso->codi</td>";
-					echo "<td>$curso->nom</td>";
-					echo "<td>$curso->descripcio</td>";
-					echo "<td>$curso->hores hores</td>";
-					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
+					//echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
+					//echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
+					echo "<td>$preinscripcio->codi</td>";
+					echo "<td>$preinscripcio->nom</td>";
+					echo "<td>$preinscripcio->descripcio</td>";
+					echo "<td>$preinscripcio->hores</td>";
+					echo "<td><a href='index.php?controlador=Preinscripcio&operacion=verPreinscripcio&parametro=$curso->id'>
 					<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
 					echo "</tr>";
-				}	*/			
+				}			
 		
 		?>
 			</table>
