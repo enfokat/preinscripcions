@@ -70,9 +70,7 @@
 		}
 ?>
 
-
-
-			
+	</table>		
 		</section>
 		
 		<?php Template::footer();?>
