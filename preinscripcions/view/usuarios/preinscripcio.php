@@ -24,8 +24,8 @@
 	
 			<table id='tabla'>
 				<tr>
-					<th>id</th>		
-					<th>Codi</th>
+					<th>id_curs</th>		
+					<th>id_usuari</th>					
 					<th>Nom</th>
 					<th>Descripció</th>
 					<th>Duració</th>
