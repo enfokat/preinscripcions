@@ -20,6 +20,16 @@ class PreinscripcioModel{
 				WHERE u.id = p.id_usuari;";
 		
 		return Database::get()->query($consulta);
+		
+		$preinscripcions = array();
+			
+		while($preinscripcio = $resultado->fetch_object('PreinscripcioModel'))
+			$preinscripcions[] = $preinscripcio;
+		
+			$resultado->free();
+		
+			return $preinscripcions;
+		}
 	}
 	
 }
