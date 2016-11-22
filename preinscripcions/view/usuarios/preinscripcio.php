@@ -38,7 +38,7 @@
 					//echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
 					echo "<td>$preinscripcio->id_usuari</td>";
 					echo "<td>$preinscripcio->id_curs</td>";
-					//echo "<td>$preinscripcio->descripcio</td>";
+					echo "<td>$preinscripcio->data</td>";
 					//echo "<td>$preinscripcio->hores</td>";
 					//echo "<td><a href='index.php?controlador=Preinscripcio&operacion=verPreinscripcio&parametro=$curso->id'>
 					//<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
