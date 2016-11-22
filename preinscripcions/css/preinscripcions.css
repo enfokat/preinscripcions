@@ -1,1 +1,36 @@
 @CHARSET "UTF-8";
+.admin{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.admin>div{
+	flex: 1;
+	padding: 2%;
+	margin: 2%;
+}
+
+.col{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col>figure,
+.col>div{
+	flex: 1;
+	padding: 1%;
+	margin-bottom: 40px;
+}
+
+.col>div>a{
+	color: grey;
+	text-decoration: underline;
+}
+
+.resEs{
+	font-weight: bold;
+}
+
+h3{
+	color: orange;
+}
