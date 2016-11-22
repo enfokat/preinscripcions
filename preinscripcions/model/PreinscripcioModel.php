@@ -20,15 +20,17 @@ class PreinscripcioModel{
 				ON c.id = p.id_curs
 				WHERE id_usuari=$id;";
 		
-		return Database::get()->query($consulta);
+		$datos = Database::get()->query($consulta);
 		
 		$preinscripcions = array();
-			
-		while($preinscripcio = $resultado->fetch_object('PreinscripcioModel'))
+		
+
+		
+		while($preinscripcio = $datos->fetch_object('PreinscripcioModel'))
 			$preinscripcions[] = $preinscripcio;
 		
-			$resultado->free();
-		
+			$datos->free();
+
 			return $preinscripcions;
 		}
 	}

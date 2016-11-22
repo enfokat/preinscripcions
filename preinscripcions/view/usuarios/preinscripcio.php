@@ -32,13 +32,14 @@
 					<th></th>
 				</tr>	
 		<?php		
-				foreach($preinscripcions as $preinscripcio){ //poner el formulario de acceso para registrado
+		var_dump($preinscripcions);
+				foreach($preinscripcions as $p){ //poner el formulario de acceso para registrado
 					echo "<tr>";
 					//echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
 					//echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
-					echo "<td>$preinscripcio->id_usuari</td>";
-					echo "<td>$preinscripcio->id_curs</td>";
-					echo "<td>$preinscripcio->data</td>";
+					echo "<td>$p->id_usuari</td>";
+					echo "<td>$p->id_curs</td>";
+					echo "<td>$p->data</td>";
 					//echo "<td>$preinscripcio->hores</td>";
 					//echo "<td><a href='index.php?controlador=Preinscripcio&operacion=verPreinscripcio&parametro=$curso->id'>
 					//<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";

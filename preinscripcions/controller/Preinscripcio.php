@@ -31,15 +31,15 @@ class Preinscripcio extends Controller{
 		throw new Exception('Solo para los usuarios registrados');
 	
 		$this->load('model/PreinscripcioModel.php');
-		$preinscripcio = PreinscripcioModel::verPreinscripcions($id);
+		$preinscripcions = PreinscripcioModel::verPreinscripcions($id);
 	
-		if(!$preinscripcio)
+		if(!$preinscripcions)
 			throw new Exception('No se encuentra las preinscripciones');
 	
 			//pasar el curso a la vista
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['preinscripcio'] = $preinscripcio;
+			$datos['preinscripcions'] = $preinscripcions;
 			$this->load_view('view/usuarios/preinscripcio.php', $datos);
 	}
 	}
