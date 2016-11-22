@@ -15,7 +15,7 @@ class PreinscripcioModel{
 	}
 	
 	public function verPreinscripcions($id){ 
-		$consulta = "SELECT p.data, p.id_usuari, p.id_curs, c.nom, c.codi
+		$consulta = "SELECT p.*, c.*
 				FROM preinscripcions p INNER JOIN cursos c
 				ON c.id = p.id_curs
 				WHERE id_usuari=$id;";

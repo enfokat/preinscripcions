@@ -31,19 +31,20 @@
 					<th>Data Inscripció</th>
 				</tr>	
 		<?php		
-		var_dump($preinscripcions);
-				foreach($preinscripcions as $p){ //poner el formulario de acceso para registrado
+				foreach($preinscripcions as $p){
 					echo "<tr>";
 					echo "<td>$p->codi</td>";
-					echo "<td>$p->nom</td>";
-					echo "<td>**</td>";
-					echo "<td>**</td>";
+					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$p->id'>$p->nom</a></td>";
+					echo "<td>$p->hores hores</td>";
+					echo "<td>$p->data_inici</td>";
 					echo "<td>$p->data</td>";
 					echo "</tr>";
 				}			
 		
 		?>
 			</table>
+			<br/><br/>
+			<p>Per veure els detalls del curs inscrit fes click sobre el nom</p>
 		</section>
 		
 		<?php Template::footer();?>
