@@ -14,10 +14,10 @@ class PreinscripcioModel{
 		return Database::get()->query($consulta);
 	}
 	
-	public function verPreinscripcions(){ 
-		$consulta = "SELECT p.data, c.nom, c.codi
-				FROM p = preinscripcions, c = cursos
-				WHERE u.id = p.id_usuari;";
+	public function verPreinscripcions($id){ 
+		$consulta = "SELECT p.data, p.id_usuari, c.nom, c.codi
+				FROM preinscripcions p INNER JOIN cursos c
+				ON c.id = p.id_usuari;";
 		
 		return Database::get()->query($consulta);
 		
@@ -32,6 +32,6 @@ class PreinscripcioModel{
 		}
 	}
 	
-}
+
 
 ?>

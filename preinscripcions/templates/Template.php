@@ -57,7 +57,7 @@
 							<li><a href="index.php?controlador=Usuario&operacion=registro">Registre</a></li>	
 						<?php } ?>	
 						<?php if($usuario){?>
-							<li><a href="#">Mis Pre-inscripcions</a></li>
+							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio&parametro=<?php echo $usuario->id; ?>">meves preinscripcions</a></li>
 							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Mis Dades</a></li>
 						<?php } ?>	
 						</ul>

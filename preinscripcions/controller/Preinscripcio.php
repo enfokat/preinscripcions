@@ -25,23 +25,23 @@ class Preinscripcio extends Controller{
 			$this->load_view('view/exito.php', $datos);
 	}
 	
-	//veure curs
-	/*public function listarPreinscripcio($id=0){
-		//if(!Login::getUsuario())
-		//throw new Exception('Solo para los usuarios registrados');
+	//veure preinscripcions
+	public function listarPreinscripcio($id){
+		if(!Login::getUsuario())
+		throw new Exception('Solo para los usuarios registrados');
 	
 		$this->load('model/PreinscripcioModel.php');
-		$curso = PreinscripcioModel::getCurso($id);
+		$preinscripcio = PreinscripcioModel::verPreinscripcions($id);
 	
-		if(!$curso)
-			throw new Exception('No se encuentra el curso');
+		if(!$preinscripcio)
+			throw new Exception('No se encuentra las preinscripciones');
 	
 			//pasar el curso a la vista
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['curso'] = $curso;
-			$this->load_view('view/cursos/detalles.php', $datos);
+			$datos['preinscripcio'] = $preinscripcio;
+			$this->load_view('view/usuarios/preinscripcio.php', $datos);
 	}
-	}*/
-}
+	}
+
 ?>
