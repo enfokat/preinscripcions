@@ -67,6 +67,17 @@
 			$resultado->free();
 			
 			return $us;
-		}	
+		}
+		
+		public static function getUsuarios(){
+			$user_table = Config::get()->db_user_table;
+			$consulta = "SELECT * FROM $user_table;";
+			$resultado = Database::get()->query($consulta);
+				
+			$us = $resultado->fetch_object('UsuarioModel');
+			$resultado->free();
+				var_dump($user_table);
+			return $us;
+		}
 	}
 ?>

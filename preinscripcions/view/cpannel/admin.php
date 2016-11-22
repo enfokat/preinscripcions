@@ -28,11 +28,11 @@
 						<img alt="" src="images/panel/gestionUsuarios.jpg" width="150">
 					</figure>
 					<div>
-						<h3>Gestión de Usuarios</h3>
-						<a href="index.php?controlador=Usuario&operacion=registro">Agregar un usuario</a><br/>
-						<a href="">Listar Usuarios</a><br/>
-						<a href="">Modificar un usuario</a><br/>
-						<a href="">Eliminar usuario</a><br/>
+						<h3>Gestió de Usuaris</h3>
+						<a href="index.php?controlador=Usuario&operacion=registro">Agregar usuari</a><br/>
+						<a href="index.php?controlador=Usuario&operacion=listar">Llistar Usuaris</a><br/>
+						<a href="">Modificar usuari</a><br/>
+						<a href="">Esborrar usuari</a><br/>
 					</div>
 				</div>
 				
@@ -41,11 +41,11 @@
 						<img alt="" src="images/panel/gestionCursos.png" width="150">
 					</figure>
 					<div>
-						<h3>Gestión de Cursos</h3>
-						<a href="">Agregar Curso</a><br/>
-						<a href="">Listar Curso</a><br/>
-						<a href="">Modificar Curso</a><br/>
-						<a href="">Eliminar Curso</a><br/>
+						<h3>Gestió de Curssos</h3>
+						<a href="">Agregar Curs</a><br/>
+						<a href="">Llistar Curs</a><br/>
+						<a href="">Modificar Curs</a><br/>
+						<a href="">Esborrar Curs</a><br/>
 					</div>	
 				</div>
 			</section>
@@ -56,11 +56,11 @@
 						<img alt="" src="images/panel/gestionArea.png" width="150">
 					</figure>
 					<div>
-						<h3>Gestión  Areas Formatives</h3>
-						<a href="">Agregar Area</a><br/>
-						<a href="">Listar Area</a><br/>
-						<a href="">Modificar Area</a><br/>
-						<a href="">Eliminar Area</a><br/>
+						<h3>Gestió Àreas Formativa</h3>
+						<a href="">Agregar Àrea</a><br/>
+						<a href="">Llistar Àrea</a><br/>
+						<a href="">Modificar Àrea</a><br/>
+						<a href="">Esborrar Àrea</a><br/>
 					</div>
 				</div>
 				
@@ -69,10 +69,10 @@
 						<img alt="" src="images/panel/gestionPre.jpg" width="150">
 					</figure>
 					<div>
-						<h3>Gestión Pre-inscripcions</h3>
+						<h3>Gestió Pre-inscripcions</h3>
 						<a href="">Agregar Pre-Inscripció</a><br/>
-						<a href="">Listar Pre-Inscripció</a><br/>
-						<a href="">Eliminar Pre-Inscripció</a><br/>
+						<a href="">Llistar Pre-Inscripció</a><br/>
+						<a href="">Esborrar Pre-Inscripció</a><br/>
 						<a href="">Exportar XML</a><br/>
 						<a href="">Imprimir Llistat</a><br/>
 					</div>	
@@ -86,7 +86,7 @@
 					</figure>
 					<div>
 						<h3>Gestión Subscripcions</h3>
-						<a href="">Listar Subscripció</a><br/>
+						<a href="">Listar Usuaris Subscrits</a><br/>
 						<a href="">Agregar Subscripció</a><br/>
 						<a href="">Eliminar Subscripció</a><br/>
 

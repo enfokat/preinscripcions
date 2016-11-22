@@ -52,13 +52,13 @@
 					<nav>
 						<ul class="menu">
 							<li><a href="index.php?controlador=Welcome&operacion=index">Inici</a></li>
-							<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
+							<li><a href="index.php?controlador=Curso&operacion=listar">Veure Cursos</a></li>
 						<?php if(!$usuario){?>
 							<li><a href="index.php?controlador=Usuario&operacion=registro">Registre</a></li>	
 						<?php } ?>	
 						<?php if($usuario){?>
-							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio&parametro=<?php echo $usuario->id; ?>">meves preinscripcions</a></li>
-							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Mis Dades</a></li>
+							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio&parametro=<?php echo $usuario->id; ?>">Les meves preinscripcions</a></li>
+							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Les meves Dades</a></li>
 						<?php } ?>	
 						</ul>
 						<?php 
