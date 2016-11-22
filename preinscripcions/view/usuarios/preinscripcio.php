@@ -24,25 +24,21 @@
 	
 			<table id='tabla'>
 				<tr>
-					<th>id_curs</th>		
-					<th>id_usuari</th>					
-					<th>Nom</th>
-					<th>Descripció</th>
-					<th>Duració</th>
-					<th></th>
+					<th>Codi Curs</th>		
+					<th>Nom Curs</th>
+					<th>Duració</th>					
+					<th>Data Inici</th>
+					<th>Data Inscripció</th>
 				</tr>	
 		<?php		
 		var_dump($preinscripcions);
 				foreach($preinscripcions as $p){ //poner el formulario de acceso para registrado
 					echo "<tr>";
-					//echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
-					//echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
-					echo "<td>$p->id_usuari</td>";
-					echo "<td>$p->id_curs</td>";
+					echo "<td>$p->codi</td>";
+					echo "<td>$p->nom</td>";
+					echo "<td>**</td>";
+					echo "<td>**</td>";
 					echo "<td>$p->data</td>";
-					//echo "<td>$preinscripcio->hores</td>";
-					//echo "<td><a href='index.php?controlador=Preinscripcio&operacion=verPreinscripcio&parametro=$curso->id'>
-					//<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
 					echo "</tr>";
 				}			
 		
