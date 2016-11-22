@@ -2,15 +2,18 @@
 	class Cpannel extends Controller{
 	
 		//Método por defecto
-		//Carga la portada del sitio (vista welcome_message)
+		//Carga el panel de control -> solo muestra la vista al usuario administrador
 		public function menu(){
-			
+		
 		$datos = array();
 		$datos['usuario'] = Login::getUsuario();
 		
-		$this->load_view('view/cpannel/admin.php', $datos);
-			
-		}
-		
+			if(@$datos['usuario']->admin == 1){
+				$this->load_view('view/cpannel/admin.php', $datos);
+			}else{
+				throw new Exception('Solo Admin');
+			}
+		}	
 	}
+	
 ?>
