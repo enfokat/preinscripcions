@@ -1,7 +1,7 @@
 <?php
 	class UsuarioModel{
 		//PROPIEDADES
-		public  $dni, $nom, $cognom1, $cognom2, $data_naixement, $estudis, $situacio_laboral, $prestacio, 
+		public  $id, $dni, $nom, $cognom1, $cognom2, $data_naixement, $estudis, $situacio_laboral, $prestacio, 
 		$telefon_mobil, $telefon_fix, $email, $admin=0;
 			
 		//METODOS

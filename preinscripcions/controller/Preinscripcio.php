@@ -26,12 +26,15 @@ class Preinscripcio extends Controller{
 	}
 	
 	//veure preinscripcions
-	public function listarPreinscripcio($id){
+	public function listarPreinscripcio(){
 		if(!Login::getUsuario())
-		throw new Exception('Solo para los usuarios registrados');
-	
+			throw new Exception('Solo para los usuarios registrados');
+		
 		$this->load('model/PreinscripcioModel.php');
-		$preinscripcions = PreinscripcioModel::verPreinscripcions($id);
+				
+		$id_usuari = Login::getUsuario()->id;	
+		
+		$preinscripcions = PreinscripcioModel::verPreinscripcions($id_usuari);
 	
 		if(!$preinscripcions)
 			throw new Exception('No se encuentra las preinscripciones');
@@ -42,6 +45,38 @@ class Preinscripcio extends Controller{
 			$datos['preinscripcions'] = $preinscripcions;
 			$this->load_view('view/usuarios/preinscripcio.php', $datos);
 	}
+	
+	public function borrarPreinscripcio($c){
+		if(!Login::getUsuario())
+			throw new Exception('Només per als usuaris enregistrats');
+		
+		$this->load('model/PreinscripcioModel.php');
+		
+		$u = Login::getUsuario()->id;
+		$preinscripcion = PreinscripcioModel::getPreinsc($u,$c);				
+				
+		if(empty($preinscripcion))
+			throw new Exception("No s'ha trobat la preinscripcio");
+		
+				
+		if(empty($_POST['borrar'])){
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['preinscripcions'] = $preinscripcion;
+			$this->load_view('view/usuarios/borrar.php', $datos);
+		}else{
+			
+			if(!$preinscripcion->eliminarPreinscripcio())
+				throw new Exception('Se produjo un error al borrar');
+
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['mensaje'] = 'BORRADO OK';
+			$this->load_view('view/exito.php', $datos);
+
+		}
 	}
+}
+	
 
 ?>
