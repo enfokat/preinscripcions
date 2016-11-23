@@ -143,6 +143,15 @@
 			}
 		}
 		
+		public function listar(){
+			$this->load('model/UsuarioModel.php');
+			
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['usuarios'] = UsuarioModel::getUsuarios();
+			
+			$this->load_view('view/usuarios/listaruser.php', $datos);
+		}
 
 		
 	}
