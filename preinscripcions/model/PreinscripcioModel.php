@@ -4,7 +4,7 @@ class PreinscripcioModel{
 	public $id_usuari, $id_curs,$data, $codi, $nom, $data_inici, $descripcio, $hores;
 
 
-	//METODOS
+	//METODOS 
 	//guardar un curs
 	public function guardar(){
 		$consulta = "INSERT INTO preinscripcions(id_usuari, id_curs)
@@ -14,13 +14,8 @@ class PreinscripcioModel{
 		return Database::get()->query($consulta);
 	}
 	
-<<<<<<< HEAD
 	public function verPreinscripcions($id=0){ 
 		$consulta = "SELECT p.id_usuari, c.id, c.codi, c.nom, p.data, c.data_inici, c.descripcio, c.hores
-=======
-	public function verPreinscripcions($id){ 
-		$consulta = "SELECT p.*, c.*
->>>>>>> branch 'master' of https://github.com/enfokat/preinscripcions.git
 				FROM preinscripcions p INNER JOIN cursos c
 				ON c.id = p.id_curs
 				WHERE p.id_usuari=$id;";		

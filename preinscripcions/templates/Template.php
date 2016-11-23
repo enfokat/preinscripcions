@@ -17,7 +17,7 @@
 		<?php }
 		
 		
-		//PONE EL FORMULARIO DE LOGIN
+		//PONE EL FORMULARIO DE LOGIN 
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
 				<label>DNI:</label><input type="text" name="dni" required="required"  onblur="onBlur="MaysPrimera(this);"/>
@@ -52,18 +52,13 @@
 					<nav>
 						<ul class="menu">
 							<li><a href="index.php?controlador=Welcome&operacion=index">Inici</a></li>
-							<li><a href="index.php?controlador=Curso&operacion=listar">Veure Cursos</a></li>
+							<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
 						<?php if(!$usuario){?>
 							<li><a href="index.php?controlador=Usuario&operacion=registro">Registre</a></li>	
 						<?php } ?>	
 						<?php if($usuario){?>
-<<<<<<< HEAD
 							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio">meves preinscripcions</a></li>
 							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Mis Dades</a></li>
-=======
-							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio&parametro=<?php echo $usuario->id; ?>">Les meves preinscripcions</a></li>
-							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Les meves Dades</a></li>
->>>>>>> branch 'master' of https://github.com/enfokat/preinscripcions.git
 						<?php } ?>	
 						</ul>
 						<?php 
