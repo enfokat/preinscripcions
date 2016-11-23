@@ -34,6 +34,24 @@
 			return Database::get()->query($consulta);
 		}
 		
+		public function actualizar2(){
+			$user_table = Config::get()->db_user_table;
+			$consulta = "UPDATE $user_table
+			SET dni='$this->dni',
+				nom='$this->nom',
+				cognom1='$this->cognom1',
+				cognom2='$this->cognom2',
+				data_naixement='$this->data_naixement',
+				telefon_mobil='$this->telefon_mobil',
+				telefon_fix='$this->telefon_fix',
+				email='$this->email',
+				estudis='$this->estudis',
+				situacio_laboral='$this->situacio_laboral',
+				prestacio='$this->prestacio'
+			WHERE dni='$this->dni';";
+			return Database::get()->query($consulta);
+		}
+		
 		
 		//elimina el usuario de la BDD
 		public function borrar(){

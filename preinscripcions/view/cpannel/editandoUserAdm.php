@@ -19,41 +19,39 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-		<?php var_dump($datos['u']); ?>
-		
 		<section>
 			<h2>Modificar les dades del usuari</h2>
 			
 				<form method="post"  autocomplete="off">
 			
 				<label>Nom:</label>
-				<input type="text" name="nom" required="required"  onBlur="MaysPrimera(this);" value="<?php echo $usuario->nom;?>"/><br/>
+				<input type="text" name="nom" required="required"  onBlur="MaysPrimera(this);" value="<?php echo $selec->nom;?>"/><br/>
 				
 				<label>Cognom1:</label>
-				<input type="text" name="cognom1" required="required"  onBlur="MaysPrimera(this);"  value="<?php echo $usuario->cognom1;?>" /><br/>
+				<input type="text" name="cognom1" required="required"  onBlur="MaysPrimera(this);"  value="<?php echo $selec->cognom1;?>" /><br/>
 				
 				<label>Cognom 2:</label>
-				<input type="text" name="cognom2"  onBlur="MaysPrimera(this);"  value="<?php echo $usuario->cognom2;?>"/><br/>
+				<input type="text" name="cognom2"  onBlur="MaysPrimera(this);"  value="<?php echo $selec->cognom2;?>"/><br/>
 				
 				<label>Data Naixement:</label>
-				<input type="date" name="data_naixement" required="required" placeholder="AAAA-MM-DD"   value="<?php echo $usuario->data_naixement;?>"/><br/>
+				<input type="date" name="data_naixement" required="required" placeholder="AAAA-MM-DD"   value="<?php echo $selec->data_naixement;?>"/><br/>
 				
 				<label>DNI:</label>
-				<input type="text" name="dni" required="required"  onBlur="Mayus(this);"   value="<?php echo $usuario->dni;?>" /><br/>
+				<input type="text" name="dni" required="required"  onBlur="Mayus(this);"   value="<?php echo $selec->dni;?>" /><br/>
 				
 				<label>Telefon Movil:</label>
-				<input type="text" name="telefon_mobil" required="required"   value="<?php echo $usuario->telefon_mobil;?>" /><br/>
+				<input type="text" name="telefon_mobil" required="required"   value="<?php echo $selec->telefon_mobil;?>" /><br/>
 				
 				<label>Telefon Fix:</label>
-				<input type="text" name="telefon_fix"  value="<?php echo $usuario->telefon_fix;?>"/><br/>
+				<input type="text" name="telefon_fix"  value="<?php echo $selec->telefon_fix;?>"/><br/>
 				
 				<label>E-mail:</label>
-				<input type="email" name="email" required="required"    value="<?php echo $usuario->email;?>"/><br/>	
+				<input type="email" name="email" required="required"    value="<?php echo $selec->email;?>"/><br/>	
 				
 				<label> Nivell d'estudis</label>
 				<select name="estudis"   >
 				<?php 
-						switch ($usuario->estudis) {
+						switch ($selec->estudis) {
 							case 0:
 								echo "<option selected value='0'>Sense Estudis</option>";
 								echo "<option value='1'>Educació Primaria</option>";
@@ -124,10 +122,10 @@
 				<label>Situació Laboral</label>
 				<select name="situacio_laboral">
 					<?php 
-						if($usuario->situacio_laboral == 0){
+						if($selec->situacio_laboral == 0){
 							echo "<option  selected value='0'>Desempleat</option>";
 							echo "<option value='1'>Empleat</option>";	
-						}elseif($usuario->situacio_laboral == 1){
+						}elseif($selec->situacio_laboral == 1){
 							echo "<option value='0'>Desempleat</option>";
 							echo "<option selected value='1'>Empleat</option>";
 						}				
@@ -139,10 +137,10 @@
 				<label>¿Rep alguna prestació?</label>
 				<select name="prestacio">
 					<?php 
-						if($usuario->prestacio == 0){
+						if($selec->prestacio == 0){
 							echo "<option  selected value='0'>NO</option>";
 							echo "<option value='1'>SI</option>";	
-						}elseif($usuario->prestacio == 1){
+						}elseif($selec->prestacio == 1){
 							echo "<option value='0'>NO</option>";
 							echo "<option selected value='1'>SI</option>";
 						}				
@@ -153,10 +151,10 @@
 				<label>Privilegis</label>
 					<select name="admin">
 					<?php 
-						if($usuario->admin == 0){
+						if($selec->admin == 0){
 							echo "<option  selected value='0'>Usuari</option>";
 							echo "<option value='1'>Admin</option>";	
-						}elseif($usuario->admin == 1){
+						}elseif($selec->admin == 1){
 							echo "<option value='0'>Usuari</option>";
 							echo "<option selected value='1'>Admin</option>";
 						}				
@@ -169,7 +167,7 @@
 				<input type="reset" name="reset" value="Cancelar"/>
 			</form>
 				<br/><br/><br/>	
-							<form  method="post" action="index.php?controlador=Usuario&operacion=baja&parametro=<?php echo $usuario->id; ?>">
+							<form  method="post" action="index.php?controlador=Usuario&operacion=baja&parametro=<?php echo $selec->id; ?>">
 										<h3>Baixa del Servei</h3>
 										<p>Si dessitjes esborrar el teu compte d' aquest sistema, fes click en el botÃ³ de sota, totes les teves inscripcions seran esborrades automÃ¡ticament.</p>
 										<input type="submit" name=" baja" value="Baixa del Servei"/>

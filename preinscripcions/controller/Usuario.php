@@ -63,7 +63,7 @@
 				//mostramos la vista del formulario
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
-			//	$datos['max_image_size'] = Config::get()->user_image_max_size;
+			
 				$this->load_view('view/usuarios/editar.php', $datos);
 					
 				//si llegan los datos por POST
@@ -188,8 +188,6 @@
 
 		}
 
-		
-
 		public function admModificar(){
 				
 			$this->load('model/UsuarioModel.php');
@@ -198,19 +196,52 @@
 			$datos['usuario'] = Login::getUsuario();
 		
 			$u = @$_POST['cercaUsuari'];
-				
-		
+						
 			$datos['cerca'] = UsuarioModel::getUsuario($u);
 			$this->load_view('view/cpannel/editarUserAdm.php', $datos);
 		}
 		
 		
-		public function editUserAdm(){
-			//TODO			
-			$datos = array();
-			$datos['usuario'] = Login::getUsuario();
-			$datos['u'] = Login::getUsuario($_GET);
-			$this->load_view('view/cpannel/editandoUserAdm.php', $datos);
+		public function editUserAdm($dni=0){
+			//TODO
+			$this->load('model/UsuarioModel.php');
+			
+			if(empty($_POST['modificar'])){			
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['selec'] = UsuarioModel::getUsuario($dni); 
+				$this->load_view('view/cpannel/editandoUserAdm.php', $datos);
+			}else{
+				//recuperar los datos actuales del usuario
+				$u = UsuarioModel::getUsuario($dni);
+				$conexion = Database::get();
+				
+				//recupera el nuevo nombre y el nuevo email
+				$u->dni = $conexion->real_escape_string($_POST['dni']);
+				$u->nom = $conexion->real_escape_string($_POST['nom']);
+				$u->cognom1 = $conexion->real_escape_string($_POST['cognom1']);
+				$u->cognom2 = $conexion->real_escape_string($_POST['cognom2']);
+				$u->data_naixement = $conexion->real_escape_string($_POST['data_naixement']);
+				$u->estudis = $conexion->real_escape_string($_POST['estudis']);
+				$u->situacio_laboral = $conexion->real_escape_string($_POST['situacio_laboral']);
+				$u->prestacio = $conexion->real_escape_string($_POST['prestacio']);
+				$u->telefon_mobil = $conexion->real_escape_string($_POST['telefon_mobil']);
+				$u->telefon_fix = $conexion->real_escape_string($_POST['telefon_fix']);
+				$u->email = $conexion->real_escape_string($_POST['email']);
+				
+				//modificar el usuario en BDD
+				$this->load('model/UsuarioModel.php');
+				if(!$u->actualizar2())
+					throw new Exception('No se pudo modificar');
+										
+					//mostrar la vista de éxito
+					$datos = array();
+					$datos['usuario'] = Login::getUsuario();
+					$datos['mensaje'] = 'Datos de Usuario modificados correctamente';
+					$this->load_view('view/exito.php', $datos);
+				
+				
+			}
 		}
 	}
 ?>
