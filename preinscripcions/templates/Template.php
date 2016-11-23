@@ -11,7 +11,7 @@
 				</figure>
 				<hgroup>
 					<h1>Pre-Inscripcions</h1>
-					<h2>Apuntate a los cursos que te interese</h2>
+					<h2>Preinscriu-te'n als cursos que mes t'agradin</h2>
 				</hgroup>
 			</header>
 		<?php }

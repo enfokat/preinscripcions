@@ -21,10 +21,9 @@
 
 		<section id="content">
 			<h1>Listado de cursos</h1>
-			
+			<table id='tabla'>	
 	<?php 
 		if(!$usuario){ //poner el formulario de acceso para no registrado
-			echo "<table id='tabla'>";
 			echo "<tr>";			
 			echo "<th>Area Formativa</th>";
 			echo "<th>Codi</th>";

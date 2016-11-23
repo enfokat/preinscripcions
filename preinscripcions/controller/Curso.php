@@ -17,8 +17,9 @@ class Curso extends Controller{
 		if(!Login::isAdmin())
 			$this->load_view('view/cursos/listar.php', $datos);
 			else
-				$this->load_view('view/cursos/admin/lista_admin.php',$datos);
+				$this->load_view('view/cpannel/lista_admin.php',$datos);
 	}
+	
 	
 	//veure curs
 	public function ver($id=0){
