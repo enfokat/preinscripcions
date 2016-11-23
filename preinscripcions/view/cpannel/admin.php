@@ -31,7 +31,7 @@
 						<h3>Gestió de Usuaris</h3>
 						<a href="index.php?controlador=Usuario&operacion=registro">Agregar usuari</a><br/>
 						<a href="index.php?controlador=Usuario&operacion=listarTodos">Llistar Usuaris</a><br/>
-						<a href="">Modificar usuari</a><br/>
+						<a href="index.php?controlador=Usuario&operacion=admModificar">Modificar usuari</a><br/>
 						<a href="index.php?controlador=Usuario&operacion=admBorrar">Esborrar usuari</a><br/>
 					</div>
 				</div>

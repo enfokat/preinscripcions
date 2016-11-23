@@ -3,7 +3,7 @@
 	<head>
 		<base href="<?php echo Config::get()->url_base;?>" />
 		<meta charset="UTF-8">
-		<title>CPannel - Esborrar Usuari</title>
+		<title>CPannel - Modificarr Usuari</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css;?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css2;?>" />
 		<script type="text/javascript" src="<?php echo Config::get()->js;?>"></script>
@@ -48,7 +48,7 @@
 					echo@ "<td>$cerca->cognom2</td>";
 					echo@ "<td>$cerca->dni</td>";
 					echo@ "<td>$cerca->email</td>";
-					echo@ "<td><a href='index.php?controlador=Usuario&operacion=bajaUserAdm&parametro=$cerca->dni'>Esborrar</a></td>";
+					echo@ "<td><a href='index.php?controlador=Usuario&operacion=editUserAdm&parametro=$cerca->dni'>Modificar</a></td>";
 					echo "</tr>";
 						
 		

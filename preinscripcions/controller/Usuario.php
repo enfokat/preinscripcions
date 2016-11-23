@@ -165,18 +165,39 @@
 
 			$datos['cerca'] = UsuarioModel::getUsuario($u);
 			$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
-			
-		
-			
-			//borrar seleccion
-			
-			//mostrar vista
+
 		}
 		
-		public function bajaAdm(){
+		public function bajaUserAdm($dni=0){
 			
+			$this->load('model/UsuarioModel.php');
+			$u = UsuarioModel::getUsuario($dni);
+			
+			if(!$us->borrar($u))
+				throw new Exception('No es pot realitzar la baixa');
+
 		}
 
+		public function admModificar(){
+				
+			$this->load('model/UsuarioModel.php');
+				
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
 		
+			$u = @$_POST['cercaUsuari'];
+				
+		
+			$datos['cerca'] = UsuarioModel::getUsuario($u);
+			$this->load_view('view/cpannel/editarUserAdm.php', $datos);
+		}
+		
+		public function editUserAdm(){
+			
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['u'] = Login::getUsuario($_GET);
+			$this->load_view('view/cpannel/editandoUserAdm.php', $datos);
+		}
 	}
 ?>
