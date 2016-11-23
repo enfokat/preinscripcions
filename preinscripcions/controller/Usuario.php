@@ -173,10 +173,22 @@
 			$this->load('model/UsuarioModel.php');
 			$u = UsuarioModel::getUsuario($dni);
 			
-			if(!$us->borrar($u))
-				throw new Exception('No es pot realitzar la baixa');
+		if(empty($u))
+			throw new Exception("No s'ha trobat la preinscripcio");
+		
+				
+			
+			if(!$u->borrar())
+				throw new Exception('Se produjo un error al borrar');
+
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['mensaje'] = 'BORRADO OK';
+			$this->load_view('view/exito.php', $datos);
 
 		}
+
+		
 
 		public function admModificar(){
 				
@@ -191,6 +203,7 @@
 			$datos['cerca'] = UsuarioModel::getUsuario($u);
 			$this->load_view('view/cpannel/editarUserAdm.php', $datos);
 		}
+		
 		
 		public function editUserAdm(){
 			
