@@ -12,7 +12,7 @@
 			require_once($ruta); //carga el fichero
 		}
 		
-		
+
 		//método load_view() carga una vista:
 		//data: array asociativo (u objeto) con los datos que se pasan a la vista
 		protected function load_view($ruta, $data=array()){			
