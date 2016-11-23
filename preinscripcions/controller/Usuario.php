@@ -206,7 +206,7 @@
 		
 		
 		public function editUserAdm(){
-			
+			//TODO			
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
 			$datos['u'] = Login::getUsuario($_GET);

@@ -148,7 +148,22 @@
 						}				
 					?>
 				</select>
-				<br/><br/><br/>		
+				<br/><br/><br/>
+				
+				<label>Privilegis</label>
+					<select name="admin">
+					<?php 
+						if($usuario->admin == 0){
+							echo "<option  selected value='0'>Usuari</option>";
+							echo "<option value='1'>Admin</option>";	
+						}elseif($usuario->admin == 1){
+							echo "<option value='0'>Usuari</option>";
+							echo "<option selected value='1'>Admin</option>";
+						}				
+					?>
+					</select>
+				<br/><br/><br/>
+						
 				
 				<input type="submit" name="modificar" value="Salvar canvis"/>
 				<input type="reset" name="reset" value="Cancelar"/>
