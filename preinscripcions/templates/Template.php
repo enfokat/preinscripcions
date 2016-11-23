@@ -17,7 +17,7 @@
 		<?php }
 		
 		
-		//PONE EL FORMULARIO DE LOGIN 
+		//PONE EL FORMULARIO DE LOGIN  
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
 				<label>DNI:</label><input type="text" name="dni" required="required"  onblur="onBlur="MaysPrimera(this);"/>
