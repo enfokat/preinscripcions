@@ -10,7 +10,7 @@
 					</a>
 				</figure>
 				<hgroup>
-					<h1>Pre-Inscripcions</h1>
+					<h1>Pre-Inscripcionss</h1>
 					<h2>Apuntate a los cursos que te interese</h2>
 				</hgroup>
 			</header>
