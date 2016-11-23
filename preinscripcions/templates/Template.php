@@ -1,7 +1,7 @@
 <?php
 	class Template{	
 		
-		//PONE EL HEADER DE LA PAGINA
+		//PONE EL HEADER DE LA PAGINA 
 		public static function header(){	?>
 			<header>
 				<figure>
