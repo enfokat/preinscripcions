@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
 	<head>
 		<base href="<?php echo Config::get()->url_base;?>" />
 		<meta charset="UTF-8">

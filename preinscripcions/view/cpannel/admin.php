@@ -42,7 +42,7 @@
 					</figure>
 					<div>
 						<h3>Gestió de Curssos</h3>
-						<a href="">Agregar Curs</a><br/>
+						<a href="index.php?controlador=Curso&operacion=agregar">Agregar Curs</a><br/>
 						<a href="">Llistar Curs</a><br/>
 						<a href="">Modificar Curs</a><br/>
 						<a href="">Esborrar Curs</a><br/>

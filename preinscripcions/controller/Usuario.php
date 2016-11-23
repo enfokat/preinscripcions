@@ -110,7 +110,7 @@
 			$u = Login::getUsuario();
 			
 			//asegurarse que el usuario está identificado
-			if(!$u) throw new Exception("Per donarte'n de baixa tens d'estar identificat"	);
+			if(!$u) throw new Exception("Per donarte'n de baixa tens d'estar identificat");
 			
 			//si no nos están enviando la conformación de baja
 			if(empty($_POST['confirmar'])){	
@@ -122,7 +122,7 @@
 			//si nos están enviando la confirmación de baja
 			}else{
 				//validar password
-				$p =Database::get()->real_escape_string($_POST['data_naixement']);
+				$p = Database::get()->real_escape_string($_POST['data_naixement']);
 				if($u->data_naixement != $p) 
 					throw new Exception('La data de naixement es incorrecta, no es pot realitzar la baixa');
 				
