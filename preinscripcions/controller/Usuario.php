@@ -84,7 +84,6 @@
 				$u->telefon_mobil = $conexion->real_escape_string($_POST['telefon_mobil']);
 				$u->telefon_fix = $conexion->real_escape_string($_POST['telefon_fix']);
 				$u->email = $conexion->real_escape_string($_POST['email']);
-				var_dump($u);
 				
 				//modificar el usuario en BDD
 				if(!$u->actualizar())
@@ -138,19 +137,44 @@
 				//mostrar la vista de éxito
 				$datos = array();
 				$datos['usuario'] = null;
-				$datos['mensaje'] = 'Usuari eliminat correctament';
+				$datos['mensaje'] = 'Usuari esborrat correctament';
 				$this->load_view('view/exito.php', $datos);
 			}
 		}
 		
-		public function listar(){
+		public function listarTodos(){
 			$this->load('model/UsuarioModel.php');
 			
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['usuarios'] = UsuarioModel::getUsuarios();
+			$datos['usuarios'] = UsuarioModel::recuperarTodo();
 			
-			$this->load_view('view/usuarios/listaruser.php', $datos);
+			$this->load_view('view/cpannel/listaruser.php', $datos);
+		}
+		
+		
+		public function admBorrar(){
+			
+			$this->load('model/UsuarioModel.php');
+			
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+		
+			$u = @$_POST['cercaUsuari'];
+			
+
+			$datos['cerca'] = UsuarioModel::getUsuario($u);
+			$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
+			
+		
+			
+			//borrar seleccion
+			
+			//mostrar vista
+		}
+		
+		public function bajaAdm(){
+			
 		}
 
 		
