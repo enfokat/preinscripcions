@@ -69,15 +69,24 @@
 			return $us;
 		}
 		
-		public static function getUsuarios(){
+		
+		public static function recuperarTodo(){
+
 			$user_table = Config::get()->db_user_table;
 			$consulta = "SELECT * FROM $user_table;";
-			$resultado = Database::get()->query($consulta);
+			$datos = Database::get()->query($consulta);
+		
+			$usuarios = array();
 				
-			$us = $resultado->fetch_object('UsuarioModel');
-			$resultado->free();
-				var_dump($user_table);
-			return $us;
+			while($usuario = $datos->fetch_object('UsuarioModel'))
+				$usuarios[] = $usuario;
+		
+				//libera memoria
+				$datos->free();
+					
+				//retorno
+				return $usuarios;
 		}
+
 	}
 ?>

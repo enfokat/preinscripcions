@@ -10,7 +10,7 @@
 					</a>
 				</figure>
 				<hgroup>
-					<h1>Pre-Inscripcionss</h1>
+					<h1>Pre-Inscripcions</h1>
 					<h2>Apuntate a los cursos que te interese</h2>
 				</hgroup>
 			</header>
@@ -20,7 +20,11 @@
 		//PONE EL FORMULARIO DE LOGIN  
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
+<<<<<<< HEAD
 				<label>DNI:</label><input type="text" name="dni" required="required"  onblur="MisPrimera(this);"/>
+=======
+				<label>DNI:</label><input type="text" name="dni" required="required" onBlur="MaysPrimera(this);"/>
+>>>>>>> branch 'master' of https://github.com/enfokat/preinscripcions.git
 				<label>Data Naixemnet:</label><input type="date" name="data_naixement" required="required"/>
 				<input type="submit" name="login" value="Login" />
 			</form>
