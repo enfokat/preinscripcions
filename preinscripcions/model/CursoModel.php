@@ -43,6 +43,17 @@ class CursoModel{
 		return $curso;
 	}
 	
+	public static function getCurso2($codi=0){
+		$consulta = "SELECT * FROM cursos WHERE codi=$codi;";
+			
+		$resultado = Database::get()->query($consulta);
+		if(!$resultado) return null;
+			
+		$curso = $resultado->fetch_object('CursoModel');
+		$resultado->free();
+			
+		return $curso;
+	}
 	public static function totalInscrits($curs=0){
 			$consulta = "SELECT c . * , p . * , COUNT( id_usuari ) AS suma FROM cursos c INNER JOIN preinscripcions p ON c.id = p.id_curs GROUP BY c.id";
 			$resultado = Database::get()->query($consulta);
@@ -72,6 +83,11 @@ class CursoModel{
 			tipus='$this->tipus',
 			requisits='$this->requisits'
 		WHERE id='$this->id';";
+		return Database::get()->query($consulta);
+	}
+	
+	public function borrar(){
+		@$consulta = "DELETE FROM cursos WHERE id='$this->id';";
 		return Database::get()->query($consulta);
 	}
 	

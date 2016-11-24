@@ -3,7 +3,7 @@
 	<head>
 		<base href="<?php echo Config::get()->url_base;?>" />
 		<meta charset="UTF-8">
-		<title>CPannel - Modificar Usuari</title>
+		<title>Esborrar Curs</title>
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css;?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo Config::get()->css2;?>" />
 		<script type="text/javascript" src="<?php echo Config::get()->js;?>"></script>
@@ -11,7 +11,7 @@
 	
 	<body>
 		<?php 
-			Template::header(); //pone el header
+			Template::header(); //pone el header.
 
 			if(!$usuario) Template::login(); //pone el formulario de login
 			else Template::logout($usuario); //pone el formulario de logout
@@ -19,36 +19,34 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-		<section>
+			<section>
 			<form method="POST">
-				<label>Cercar usuari per DNI</label>
-				<input type="text" name="cercaUsuari"/>
-				<input type="submit" name="cercadorUsuaris" value="cercar"/>
+				<label>Cercar Curs per Codi</label>
+				<input type="text" name="cercaCurs"/>
+				<input type="submit" name="cercadorCurs" value="cercar"/>
 			</form>
 		</section>
 
 		<section id="content">
-			<h2>Llistat dels Usuaris registrats</h2>
+			<h2>Curs sel.leccionat</h2>
 						
 			<table id='tabla'>
 				<tr>
-					<th>Nom</th>		
-					<th>Cognom 1</th>
-					<th>Cognom 2</th>					
-					<th>Dni</th>
-					<th>Email</th>
-					<th>Modificar</th>
+					<th>Codi</th>		
+					<th>Nom</th>
+					<th>Descripció</th>					
+					<th>Data Inici</th>
+					<th>Horari</th>
+					<th>Esborrar</th>
 				</tr>	
 		<?php		
-		
-				
 					echo "<tr>";
+					echo@ "<td>$cerca->codi</td>";
 					echo@ "<td>$cerca->nom</td>";
-					echo@ "<td>$cerca->cognom1</td>";
-					echo@ "<td>$cerca->cognom2</td>";
-					echo@ "<td>$cerca->dni</td>";
-					echo@ "<td>$cerca->email</td>";
-					echo@ "<td><a href='index.php?controlador=Usuario&operacion=editUserAdm&parametro=$cerca->dni'>Modificar</a></td>";
+					echo@ "<td>$cerca->descripcio</td>";
+					echo@ "<td>$cerca->data_inici</td>";
+					echo@ "<td>$cerca->horari</td>";
+					echo@ "<td><a href='index.php?controlador=Curso&operacion=borrado&parametro=$cerca->id'>Esborrar</a></td>";
 					echo "</tr>";
 						
 		
@@ -57,6 +55,7 @@
 
 		</section>
 		
+		
 		<?php Template::footer();?>
-    </body> 
+    </body>
 </html>
