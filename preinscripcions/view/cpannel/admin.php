@@ -100,7 +100,13 @@
 					<div>
 						<h3>Estadísticas</h3>
 						<a href="">Actualizar Datos</a><br/><br/>
-						<p class="resEs">Total Usuaris Registrats: </p>
+						<p class="resEs">Total Usuaris Registrats: 
+						<?php 
+							$this->load('model/EstadisticasModel.php');
+							$sumaCursos = EstadisticasModel::numCursos();
+							echo $sumaCursos;
+						?>
+						</p>
 						<p class="resEs">Total Cursos Publicats: </p>
 						<p class="resEs">Total Areas Formatives: </p>
 						<p class="resEs">Total Pre-Inscripcions: </p>

@@ -6,7 +6,6 @@ class CursoModel{
 	
 	//guarda el usuario en la BDD
 	public function guardar(){
-		$user_table = Config::get()->db_user_table;
 		$consulta = "INSERT INTO cursos(id, codi, id_area, nom, descripcio, hores, data_inici, data_fi, horari, torn, tipus, requisits)
 		VALUES ('$this->id', '$this->codi', '$this->id_area', '$this->nom', '$this->descripcio', '$this->hores', '$this->data_inici', '$this->data_fi', '$this->horari', '$this->torn', '$this->tipus', '$this->requisits');";
 	
