@@ -98,5 +98,25 @@ class Curso extends Controller{
 			$this->load_view('view/exito.php', $datos);
 		
 	}
+	
+	public function editar($id=0){
+		//si no llegan los datos a modificar
+		if(empty($_POST['modificar'])){
+		
+			//mostramos la vista del formulario
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+				
+			$this->load_view('view/cpannel/editCurso.php', $datos);
+				
+			//si llegan los datos por POST
+		}else{
+			$this->load('model/CursoModel.php');
+			$c = Login::getCurso($id);
+		}
+	}
+	
+	
+	
 }
 ?>

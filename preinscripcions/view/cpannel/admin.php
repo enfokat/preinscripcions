@@ -44,7 +44,7 @@
 						<h3>Gestió de Cursos</h3>
 						<a href="index.php?controlador=Curso&operacion=agregar">Agregar Curs</a><br/>
 						<a href="index.php?controlador=Curso&operacion=listar">Llistar Curs</a><br/>
-						<a href="">Modificar Curs</a><br/>
+						<a href="index.php?controlador=Curso&operacion=editar">Modificar Curs</a><br/>
 						<a href="">Esborrar Curs</a><br/>
 					</div>	
 				</div>

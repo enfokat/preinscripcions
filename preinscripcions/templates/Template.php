@@ -37,7 +37,7 @@
 					<span class="mini">
 						<?php echo ' ('.$usuario->email.')';?>
 					</span>
-					<?php if($usuario->admin) echo ', eres administrador';?>
+					<?php if($usuario->admin) echo ', ets administrador';?>
 				</span>
 								
 				<form method="post">
@@ -65,7 +65,7 @@
 						//pone el menú del administrador
 						if($usuario && $usuario->admin){	?>
 						<ul class="menu">
-							<li><a href="index.php?controlador=Cpannel&operacion=menu">Panel de Control</a></li>
+							<li><a href="index.php?controlador=Cpannel&operacion=menu">Taulell de Control</a></li>
 						</ul>
 									
 						<?php }	?>

@@ -56,10 +56,9 @@
 			echo "<th></th>";
 			echo "<th></th>";
 			echo "</tr>";			
-				foreach($cursos as $curso){ 
-					var_dump($curso);
+				foreach($inscrits as $curso){ 
 					echo "<tr>";
-					echo "<td></td>";
+					echo "<td>$curso->suma</td>";
 					echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
 					echo "<td>$curso->codi</td>";
 					echo "<td>$curso->nom</td>";

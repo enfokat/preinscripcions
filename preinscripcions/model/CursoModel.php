@@ -44,17 +44,35 @@ class CursoModel{
 	}
 	
 	public static function totalInscrits($curs=0){
-//		$consulta = "SELECT count( id_usuari ) AS suma FROM preinscripcions GROUP BY id_curs ";
 			$consulta = "SELECT c . * , p . * , COUNT( id_usuari ) AS suma FROM cursos c INNER JOIN preinscripcions p ON c.id = p.id_curs GROUP BY c.id";
-
+			$resultado = Database::get()->query($consulta);
 			
-		$resultado = Database::get()->query($consulta);
-		if(!$resultado) return null;
+			$inscrits = array();
+				
+			while($inscrit = $resultado->fetch_object('CursoModel'))
+				$inscrits[] = $inscrit;
 			
-		$inscrits = $resultado->fetch_object('CursoModel');
-		$resultado->free();
+				$resultado->free();
 			
-		return $inscrits;
+				return $inscrits;
+	}
+	
+	public function actualizar(){
+		$consulta = "UPDATE cursos
+		SET id='$this->id',
+			codi='$this->codi',
+			id_area='$this->id_area',
+			nom='$this->nom',
+			descripcio='$this->descripcio',
+			hores='$this->hores',
+			data_inici='$this->data_inici',
+			data_fi='$this->data_fi',
+			horari='$this->horari',
+			torn='$this->torn',
+			tipus='$this->tipus',
+			requisits='$this->requisits'
+		WHERE id='$this->id';";
+		return Database::get()->query($consulta);
 	}
 	
 }
