@@ -41,7 +41,7 @@
 						<img alt="" src="images/panel/gestionCursos.png" width="150">
 					</figure>
 					<div>
-						<h3>Gestió de Curssos</h3>
+						<h3>Gestió de Cursos</h3>
 						<a href="index.php?controlador=Curso&operacion=agregar">Agregar Curs</a><br/>
 						<a href="index.php?controlador=Curso&operacion=listar">Llistar Curs</a><br/>
 						<a href="">Modificar Curs</a><br/>
@@ -70,7 +70,7 @@
 					</figure>
 					<div>
 						<h3>Gestió Pre-inscripcions</h3>
-						<a href="">Agregar Pre-Inscripció</a><br/>
+						<a href="index.php?controlador=Preinscripcio&operacion=guardarPreins&parametro=$cerca->dni">Agregar Pre-Inscripció</a><br/>
 						<a href="">Llistar Pre-Inscripció</a><br/>
 						<a href="">Esborrar Pre-Inscripció</a><br/>
 						<a href="">Exportar XML</a><br/>

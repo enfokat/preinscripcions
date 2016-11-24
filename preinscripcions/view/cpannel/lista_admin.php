@@ -46,7 +46,7 @@
 		}else{
 			echo "<table id='tabla'>";
 			echo "<tr>";
-			echo "<th></th>";
+			echo "<th>Num de Inscrits</th>";
 			echo "<th>Area Formativa</th>";
 			echo "<th>Codi</th>";
 			echo "<th>Nom</th>";
@@ -56,9 +56,10 @@
 			echo "<th></th>";
 			echo "<th></th>";
 			echo "</tr>";			
-				foreach($cursos as $curso){ //poner el formulario de acceso para  registrado
+				foreach($cursos as $curso){ 
+					var_dump($curso);
 					echo "<tr>";
-					echo "<td><a href='index.php?controlador=Curso&operacion=inscripcion&parametro=$curso->id'>Inscribirme</a></td>";
+					echo "<td></td>";
 					echo "<td><img src='images/areas/$curso->id_area.jpeg' alt='$curso->id_area' width=100></td>";
 					echo "<td>$curso->codi</td>";
 					echo "<td>$curso->nom</td>";

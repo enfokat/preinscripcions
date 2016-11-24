@@ -4,20 +4,35 @@ class Curso extends Controller{
 	public function index(){
 		$this->listar();
 	}
+	
 	//para listar
 	public function listar(){
 		$this->load('model/CursoModel.php');
 		$cursos = CursoModel::getCursos();
-	
+		$inscrits = CursoModel::totalInscrits();
+		
 		//pasarle los cursos a la vista
 		$datos = array();
 		$datos['usuario'] = Login::getUsuario();
 		$datos['cursos'] = $cursos;
+		$datos['inscrits'] = $inscrits;
 	
 		if(!Login::isAdmin())
 			$this->load_view('view/cursos/listar.php', $datos);
 			else
 				$this->load_view('view/cpannel/lista_admin.php',$datos);
+	}
+	
+	public function listarAdm(){
+		$this->load('model/CursoModel.php');
+
+	
+		//pasarle los cursos a la vista
+		$datos = array();
+		$datos['usuario'] = Login::getUsuario();
+		$datos['$inscrits'] = $inscrits;
+	
+		$this->load_view('view/cpannel/lista_admin.php',$datos);
 	}
 	
 	
