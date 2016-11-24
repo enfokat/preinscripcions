@@ -71,7 +71,7 @@ class Preinscripcio extends Controller{
 
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['mensaje'] = 'BORRADO OK';
+			$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
 			$this->load_view('view/exito.php', $datos);
 
 		}
