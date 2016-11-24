@@ -76,6 +76,59 @@ class Preinscripcio extends Controller{
 
 		}
 	}
+	
+	//OPERACIONES DEL ADMINISTRADOR
+	public function guardarPreins(){
+	
+		//si llegan los datos del formulario, incribir usuario		
+		require_once 'model/PreinscripcioModel.php';	
+			
+		if(!Login::isAdmin())
+			throw new Exception ("has de ser administrador");
+			
+		//si no llega el DNI del usuario
+		if(empty($_POST['cercadorUsuaris']) && empty($_POST['preinscriure'])){
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$this->load_view('view/cpannel/select_user.php', $datos);		
+		}	
+		
+		//si llega el DNI del usuario
+		if(!empty($_POST['cercadorUsuaris'])){
+			$dni = $_POST['dni'];
+			
+			//recuperar un usuario por DNI
+			$usuari = UsuarioModel::getUsuario($dni); 
+			
+			if(empty($usuari))
+				throw new Exception ("No existe el usuario con dni ".$dni);
+			
+			$this->load('model/CursoModel.php');
+			$cursos = CursoModel::getCursos();
+				
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['usuari'] = $usuari;
+			$datos['cursos'] = $cursos;
+			$this->load_view('view/cpannel/preinscribir_user.php', $datos); //TODO
+				
+		}
+		
+		//si llega ya la petición de preinscripcion
+		if(!empty($_POST['preinscriure'])){
+			$preinscripcio = new PreinscripcioModel();
+			$preinscripcio->id_usuari = intval($_POST['id_usuari']);
+			$preinscripcio->id_curs = intval($_POST['id_curs']);
+			
+			if(!$preinscripcio->guardar())
+				throw new Exception("inscripcio no realitzada");
+			
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['mensaje'] = "Inscrit correctament.";
+			$this->load_view('view/exito.php', $datos);
+		}
+	}
 }
 	
 

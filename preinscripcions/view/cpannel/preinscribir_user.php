@@ -37,7 +37,7 @@
 					<th>Cognom 2</th>					
 					<th>Dni</th>
 					<th>Email</th>
-					<th>preinscriure</th>
+					<th>Buscar</th>
 				</tr>	
 		<?php		
 		
@@ -48,11 +48,26 @@
 					echo@ "<td>$cerca->cognom2</td>";
 					echo@ "<td>$cerca->dni</td>";
 					echo@ "<td>$cerca->email</td>";
-					echo@ "<td><a href='index.php?controlador=Usuario&operacion=editUserAdm&parametro=$cerca->dni'>Modificar</a></td>";
+					
+					echo "<td><form>
+						<input type='hidden' name='id_usuari' value='$cerca->id'>
+						<select name ='id_curs'>;"
+					?>
+					<?php 
+					
+						foreach($cursos as $c){
+							echo "<option value=$c->id>$c->nom</option>";
+						}				
+
+					echo "</select>
+						</form></td>";
 					echo "</tr>";
 						
 		
 		?>
+		<form method="post">
+			<input type="submit" name="guardar" value="Confirmar" />
+		</form>	
 			</table>
 
 		</section>
