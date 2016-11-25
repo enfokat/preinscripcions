@@ -37,9 +37,7 @@
 		}
 		
 		public function actualizar(){
-			$consulta = "UPDATE arees_formatives
-			SET nom='$this->nom',
-			WHERE id='$this->id';";
+			$consulta = "UPDATE arees_formatives SET nom='$this->nom' WHERE id='$this->id';";
 			return Database::get()->query($consulta);
 		}
 		

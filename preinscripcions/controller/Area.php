@@ -26,7 +26,7 @@
 							//mostrar la vista de éxito
 							$datos = array();
 							$datos['usuario'] = Login::getUsuario();
-							$datos['mensaje'] = "El curs s'ha salvat exitosament";
+							$datos['mensaje'] = "El area s'ha salvat exitosament";
 
 							$this->load_view('view/exito.php', $datos);
 						}
@@ -59,30 +59,29 @@
 			
 	public function editar($id=0){
 		//si no llegan los datos a modificar
-		if(empty($_POST['cercaArea'])){
+		if(empty($_POST['guardar'])){
 		
 			//mostramos la vista del formulario
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
 			$this->load('model/AreaModel.php');
 			
-			$datos['curso'] = CursoModel::getCurso($id); 	
+			$datos['area'] = AreaModel::getArea($id); 	
 			$this->load_view('view/cpannel/editandoArea.php', $datos);
 				
 			//si llegan los datos por POST
 		}else{
 			
 			$this->load('model/AreaModel.php');
-			$a = CursoModel::getArea($id);
+			$a = AreaModel::getArea($id);
 			
 			$conexion = Database::get();
-			
-			//recupera el nuevo nombre y el nuevo email
+		
 			$a->nom = $conexion->real_escape_string($_POST['nom']);
 
 		
 			
-			//modificar el usuario en BDD
+			//modificar el dato en BDD
 			$this->load('model/AreaModel.php');
 			if(!$a->actualizar())
 				throw new Exception('Error en la modificació de les dades');
