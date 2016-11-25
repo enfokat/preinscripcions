@@ -43,14 +43,14 @@
 		
 				
 					echo "<tr>";
-					echo@ "<td>$cerca->nom</td>";
-					echo@ "<td>$cerca->cognom1</td>";
-					echo@ "<td>$cerca->cognom2</td>";
-					echo@ "<td>$cerca->dni</td>";
-					echo@ "<td>$cerca->email</td>";
+					echo@ "<td>$usuari->nom</td>";
+					echo@ "<td>$usuari->cognom1</td>";
+					echo@ "<td>$usuari->cognom2</td>";
+					echo@ "<td>$usuari->dni</td>";
+					echo@ "<td>$usuari->email</td>";
 					
 					echo "<td><form>
-						<input type='hidden' name='id_usuari' value='$cerca->id'>
+						<input type='hidden' name='id_usuari' value='$usuari->id'>
 						<select name ='id_curs'>;"
 					?>
 					<?php 
@@ -66,7 +66,9 @@
 		
 		?>
 		<form method="post">
-			<input type="submit" name="guardar" value="Confirmar" />
+			<input type="number" name="id_usuari"/>
+			<input type="number" name="id_curs"/>
+			<input type="submit" name="preinscriure" value="Confirmar" />
 		</form>	
 			</table>
 
