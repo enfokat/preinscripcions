@@ -32,6 +32,7 @@
 						
 			<table id='tabla'>
 				<tr>
+					
 					<th>Nom</th>		
 					<th>Cognom 1</th>
 					<th>Cognom 2</th>					

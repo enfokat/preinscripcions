@@ -36,7 +36,10 @@
 				foreach($preinscripcions as $p){
 					echo "<tr>";
 					echo "<td>$p->codi</td>";
-					echo "<td>$p->nom</td>";
+					echo "<td>$p->nom</td>";					
+					$fecha = new DateTime($p->data);										
+					//echo "<td>$p->data</td>";
+					echo $fecha->format("d/m/Y");
 					echo "<td>$p->data</td>";
 					echo "<td>$p->data_inici</td>";
 					echo "<td>$p->descripcio</td>";
