@@ -130,36 +130,39 @@ class Preinscripcio extends Controller{
 			$this->load_view('view/exito.php', $datos); 
 		}
 	}
-	
-	public function borrar($id=0){
+	public function borrarPreinscAdm($c){
 		if(!Login::isAdmin())
-			throw new Exception('Debes ser administrador');
-				
-			$this->load('model/UsuarioModel.php');
-			$vivienda = ViviendaModel::getVivienda($id);
+			throw new Exception('Has de ser administrador');
 	
-			if(empty($preinscripcio))
-				throw new Exception('No se encontro la preinscripcio');
+			$this->load('model/PreinscripcioModel.php');
+	
+			$u = Login::getUsuario()->id;
+			$preinscripcion = PreinscripcioModel::getPreinsc($u,$c);
+	
+			if(empty($preinscripcion))
+				throw new Exception("No s'ha trobat la preinscripcio");
 	
 	
 				if(empty($_POST['borrar'])){
 					$datos = array();
 					$datos['usuario'] = Login::getUsuario();
-					$datos['preinscripcio'] = $preinscripcio;
-					$this->load_view('view/.php', $datos);
+					$datos['preinscripcions'] = $preinscripcion;
+					$this->load_view('view/cpannel/borrarPreinscAdmin.php', $datos);
 				}else{
 						
-					if(!$preinscripico->borrar())
-						throw new Exception('Se produjo un error al borrar');						
-						
-								
-							$datos = array();
-							$datos['usuario'] = Login::getUsuario();
-							$datos['mensaje'] = ' borrado correctamente';
-							$this->load_view('view/exito.php', $datos);
-				}
+					if(!$preinscripcion->eliminarPreinscripcio())
+						throw new Exception("S'ha produït un error al borrar");
 	
+						$datos = array();
+						$datos['usuario'] = Login::getUsuario();
+						$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
+						$this->load_view('view/exito.php', $datos);
+	
+				}
 	}
+	
+	
+	
 }
 	
 

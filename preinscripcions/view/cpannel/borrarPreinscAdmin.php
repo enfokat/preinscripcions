@@ -44,7 +44,7 @@
 					echo "<td>$p->data_inici</td>";
 					echo "<td>$p->descripcio</td>";
 					echo "<td>$p->hores hores</td>";
-					echo "<td id='borrar'><a href='index.php?controlador=Preinscripcio&operacion=borrarPreinscripcio&parametro=$p->id'>
+					echo "<td id='borrar'><a href='index.php?controlador=Preinscripcio&operacion=borrarPreinscAdmin&parametro=$p->id'>
 					<img src='images/papelera.png' title='Borrar'/>
 					<fidcation</a></td>";				
 					echo "</tr>";
