@@ -127,7 +127,7 @@ class Preinscripcio extends Controller{
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
 			$datos['mensaje'] = "Inscrit correctament.";
-			$this->load_view('view/exito.php', $datos);
+			$this->load_view('view/exito.php', $datos); 
 		}
 	}
 }
