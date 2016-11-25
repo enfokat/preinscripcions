@@ -99,18 +99,12 @@
 					</figure>
 					<div>
 						<h3>Estadísticas</h3>
-						<a href="">Actualizar Datos</a><br/><br/>
-						<p class="resEs">Total Usuaris Registrats: 
-						<?php 
-							$this->load('model/EstadisticasModel.php');
-							$sumaCursos = EstadisticasModel::numCursos();
-							echo $sumaCursos;
-						?>
-						</p>
-						<p class="resEs">Total Cursos Publicats: </p>
-						<p class="resEs">Total Areas Formatives: </p>
-						<p class="resEs">Total Pre-Inscripcions: </p>
-						<p class="resEs">Total Subscripcions: </p>
+						<a href="index.php?controlador=Cpannel&operacion=menu">Actualizar Datos</a><br/><br/>
+						<label class="resEs">Total Usuaris Registrats:</label><b class="totales">  <?php  echo $sumaU[0]->suma; ?></b><br/>
+						<label class="resEs">Total Cursos Publicats:</label><b class="totales">  <?php  echo $sumaC[0]->suma; ?></b><br/>				
+						<label class="resEs">Total Areas Formatives: </label><b class="totales">  <?php  echo $sumaA[0]->suma; ?></b><br/>
+						<label class="resEs">Total Pre-Inscripcions:</label><b class="totales">  <?php  echo $sumaP[0]->suma; ?></b><br/>
+						<label class="resEs">Total Subscripcions</label><b class="totales">  <?php  echo $sumaS[0]->suma; ?></b><br/>
 					</div>
 				</div>
 				
