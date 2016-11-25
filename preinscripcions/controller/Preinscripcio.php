@@ -116,6 +116,7 @@ class Preinscripcio extends Controller{
 		
 		//si llega ya la petición de preinscripcion
 		if(!empty($_POST['preinscriure'])){
+
 			$preinscripcio = new PreinscripcioModel();
 			$preinscripcio->id_usuari = intval($_POST['id_usuari']);
 			$preinscripcio->id_curs = intval($_POST['id_curs']);

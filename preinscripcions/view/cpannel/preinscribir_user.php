@@ -39,41 +39,34 @@
 					<th>Email</th>
 					<th>Buscar</th>
 				</tr>	
-		<?php		
-		
-				
+		<?php			
 					echo "<tr>";
 					echo@ "<td>$usuari->nom</td>";
 					echo@ "<td>$usuari->cognom1</td>";
 					echo@ "<td>$usuari->cognom2</td>";
 					echo@ "<td>$usuari->dni</td>";
-					echo@ "<td>$usuari->email</td>";
-					
-					echo "<td><form>
-						<input type='hidden' name='id_usuari' value='$usuari->id'>
-						<select name ='id_curs'>;"
-					?>
-					<?php 
-					
-						foreach($cursos as $c){
-							echo "<option value=$c->id>$c->nom</option>";
-						}				
+					echo@ "<td>$usuari->email</td>";	
+							echo "	<td>
+												<form method='post'>
+														<input type='hidden' name='id_usuari' value='$usuari->id'>
+																	<select name ='id_curs'>";		
+			?>
+			<?php 				
+																			foreach($cursos as $c){
+																			echo "<option   value=$c->id>$c->nom</option>";		
+																			}	
+				?>
+				<?php 															
+																echo "</select>";
+															echo "<input type='submit'  name='preinscriure'   value='Confirmar'/>";
+											echo "	</form></td></tr>";					
+				?>
 
-					echo "</select>
-						</form></td>";
-					echo "</tr>";
-						
-		
-		?>
-		<form method="post">
-			<input type="number" name="id_usuari"/>
-			<input type="number" name="id_curs"/>
-			<input type="submit" name="preinscriure" value="Confirmar" />
-		</form>	
 			</table>
 
 		</section>
 		
 		<?php Template::footer();?>
+		
     </body> 
 </html>
