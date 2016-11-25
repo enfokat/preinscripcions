@@ -60,7 +60,7 @@
 						<a href="index.php?controlador=Area&operacion=guardado">Agregar Àrea</a><br/>
 						<a href="index.php?controlador=Area&operacion=listado">Llistar Àrea</a><br/>
 						<a href="index.php?controlador=Area&operacion=modificado">Modificar Àrea</a><br/>
-						<a href="">Esborrar Àrea</a><br/>
+						<a href="index.php?controlador=Area&operacion=admBorrar">Esborrar Àrea</a><br/>
 					</div>
 				</div>
 				

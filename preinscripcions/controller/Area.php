@@ -93,6 +93,41 @@
 				$this->load_view('view/exito.php', $datos);
 		}
 	}
+	
+	public function admBorrar(){
+	
+		$this->load('model/AreaModel.php');
+			
+		$datos = array();
+		$datos['usuario'] = Login::getUsuario();
+			
+		$conexion = Database::get();
+		$a = @$conexion->real_escape_string($_POST['cercaArea']);
+			
+		$datos['cerca'] = AreaModel::getArea($a);
+		$this->load_view('view/cpannel/deleteArea.php', $datos);
+	
+	}
+	
+	
+	public function borrado($id=0){
+	
+		$this->load('model/AreaModel.php');
+		$a = AreaModel::getArea($id);
+
+		if(!empty($a))
+			throw new Exception("No s'ha trobat aquesta area formativa");
+		
+			if(!AreaModel::borrar($a))
+				throw new Exception("Ha ocorregut un error");
+	
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['mensaje'] = 'BORRADO OK';
+				$this->load_view('view/exito.php', $datos);
+	
+	}
+	
 			
 	}
 	

@@ -41,6 +41,11 @@
 			return Database::get()->query($consulta);
 		}
 		
+		public function borrar($id=0){
+			@$consulta = "DELETE FROM arees_formatives WHERE id='$this->id';";
+			return Database::get()->query($consulta);
+		}
+		
 	}	
 	
 	
