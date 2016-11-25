@@ -24,6 +24,24 @@
 				return $areas;
 		}
 		
+		public static function getArea($id=0){
+			$consulta = "SELECT * FROM arees_formatives WHERE id=$id;";
+				
+			$resultado = Database::get()->query($consulta);
+			if(!$resultado) return null;
+				
+			$area = $resultado->fetch_object('AreaModel');
+			$resultado->free();
+				
+			return $area;
+		}
+		
+		public function actualizar(){
+			$consulta = "UPDATE arees_formatives
+			SET nom='$this->nom',
+			WHERE id='$this->id';";
+			return Database::get()->query($consulta);
+		}
 		
 	}	
 	

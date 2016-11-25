@@ -59,7 +59,7 @@
 						<h3>Gestió Àreas Formativa</h3>
 						<a href="index.php?controlador=Area&operacion=guardado">Agregar Àrea</a><br/>
 						<a href="index.php?controlador=Area&operacion=listado">Llistar Àrea</a><br/>
-						<a href="">Modificar Àrea</a><br/>
+						<a href="index.php?controlador=Area&operacion=modificado">Modificar Àrea</a><br/>
 						<a href="">Esborrar Àrea</a><br/>
 					</div>
 				</div>
@@ -71,7 +71,7 @@
 					<div>
 						<h3>Gestió Pre-inscripcions</h3>
 						<a href="index.php?controlador=Preinscripcio&operacion=guardarPreins&parametro=$cerca->dni">Agregar Pre-Inscripció</a><br/>
-						<a href="">Llistar Pre-Inscripció</a><br/>
+						<a href="index.php?controlador=Preinscripcion&operacion=borrarPreinscAdm&parametro=$cerca->dni">Llistar Pre-Inscripció</a><br/>
 						<a href="">Esborrar Pre-Inscripció</a><br/>
 						<a href="">Exportar XML</a><br/>
 						<a href="">Imprimir Llistat</a><br/>

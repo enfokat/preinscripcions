@@ -28,11 +28,13 @@
 			<table id='tabla'>	
 	<?php 
 			echo "<tr>";			
+			echo "<th>ID</th>";
 			echo "<th>Nom Àrea Formativa</th>";
 			echo "<th>Subscripció</th>";
 			echo "</tr>";			
 			foreach($areas as $a){
 				echo "<tr><form method='post'>";
+				echo "<td>$a->id</td>";
 				echo "<td>$a->nom</td>";
 				echo "<td><input type='submit' name='subs' value='Subscribir-me'/></td>";
 				echo "</form></tr>";
