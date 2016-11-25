@@ -53,6 +53,7 @@
 						<ul class="menu">
 							<li><a href="index.php?controlador=Welcome&operacion=index">Inici</a></li>
 							<li><a href="index.php?controlador=Curso&operacion=listar">Ver Cursos</a></li>
+							<li><a href="index.php?controlador=Area&operacion=listado">Arees Formatives</a></li>
 						<?php if(!$usuario){?>
 							<li><a href="index.php?controlador=Usuario&operacion=registro">Registre</a></li>	
 						<?php } ?>	

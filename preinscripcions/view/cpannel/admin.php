@@ -57,8 +57,8 @@
 					</figure>
 					<div>
 						<h3>Gestió Àreas Formativa</h3>
-						<a href="">Agregar Àrea</a><br/>
-						<a href="">Llistar Àrea</a><br/>
+						<a href="index.php?controlador=Area&operacion=guardado">Agregar Àrea</a><br/>
+						<a href="index.php?controlador=Area&operacion=listado">Llistar Àrea</a><br/>
 						<a href="">Modificar Àrea</a><br/>
 						<a href="">Esborrar Àrea</a><br/>
 					</div>

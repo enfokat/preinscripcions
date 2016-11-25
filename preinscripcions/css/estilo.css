@@ -135,16 +135,14 @@ nav{
 	border: solid 2px #aaf;
 }
 
-nav ul{
-	flex: 1;
-}
-
 nav ul:first-of-type{
 	text-align: left;
+	flex: 2;
 }
 
 nav ul:nth-of-type(2){
 	text-align: right;
+	flex: 1;
 }
 
 nav ul.menu>li{
