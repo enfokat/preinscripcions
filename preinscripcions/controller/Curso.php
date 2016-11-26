@@ -179,12 +179,12 @@ class Curso extends Controller{
 		public function borrado($id=0){
 				
 			$this->load('model/CursoModel.php');
-			$c = UsuarioModel::getUsuario($id);
-				
-			if(!empty($c))
+			$c = CursoModel::getCurso($id);
+			
+			if(empty($c))
 				throw new Exception("No s'ha trobat el curs");
 		
-				if(!CursoModel::borrar($c))
+				if(!$c->borrar())
 					throw new Exception("Ha ocorregut un error");
 		
 					$datos = array();

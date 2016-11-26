@@ -6,7 +6,7 @@
 			<header>
 				<figure>
 					<a href="index.php">
-						<img alt="Robs Micro Framework logo" src="images/logos/logo.png" />
+						<img class="banner" alt="Cifo Vallès logo" src="images/logos/header.jpg" />
 					</a>
 				</figure>
 				<hgroup>
@@ -78,7 +78,9 @@
 		public static function footer(){	?>
 			<footer>
 				<p>  
-					<a href="index.php">Pre-Inscripcions - CIFO del Vallès</a>. 
+					<a href="">Acerca de...</a>
+					<a class="center" href="index.php">Pre-Inscripcions - CIFO del Vallès</a>
+					<a class="right" href="">Robs Micro Framework</a> 
          		</p>
 			</footer>
 		<?php }

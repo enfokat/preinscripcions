@@ -73,30 +73,24 @@ body{
 
 /* HEADER */
 header{
-	padding: 20px;
 	background-color: #eef;
 	color: white;
 	text-shadow: 1px 1px 3px #99a;
-}
-
-header{
-	display: flex;
 }
 
 header h1{
 	font-size: 3em;	
 }
 
-header figure{
-	flex: 1;
-}
-
 header figure img{
-	width: 80%;
+	width: 100%;
 }
 
 header hgroup{
 	flex: 5;
+	position: absolute;
+	top: 140px;
+	left: 180px;
 }
 
 
@@ -122,15 +116,16 @@ header hgroup{
 }
 
 #login a, #logout a{
-	color: #aaf;	
+	color: orange;	
 	font-weight: bold;
 }
 
 
 /* BARRA DE NAVEGACION */
 nav{
-	background-color: #aaf;
+	background-color: #0099cc;
 	color: white;
+	font-weight: bold;
 	display: flex;
 	border: solid 2px #aaf;
 }
@@ -152,7 +147,7 @@ nav ul.menu>li{
 	transition: 0.5s;
 }
 nav ul.menu>li:hover{
-	color: #aaf;
+	color: #0099cc;
 	background-color: white;	
 }
 
@@ -202,15 +197,21 @@ nav ul.menu>li:hover{
 
 /* FOOTER */
 footer{
-	padding: 20px;
-	background-color: #eef;
-	
-	background-image: url('../images/logos/wide.png');
-	background-repeat: no-repeat;
-	background-size: 40%;
-	background-position: right top;
+	padding: 10px;
+	background-color: #66cc00;
+	color: white;
+	font-weight: bold;
+
 }
 
 footer a:hover{
 	color: blue;
+}
+
+footer>p>.right{
+	margin-left: 80%;
+}
+
+footer>p>.center{
+	margin-left: 25%;
 }

@@ -109,16 +109,15 @@
 	
 	}
 	
-	
 	public function borrado($id=0){
 	
 		$this->load('model/AreaModel.php');
 		$a = AreaModel::getArea($id);
 
-		if(!empty($a))
+		if(empty($a))
 			throw new Exception("No s'ha trobat aquesta area formativa");
 		
-			if(!AreaModel::borrar($a))
+			if(!$a->borrar())
 				throw new Exception("Ha ocorregut un error");
 	
 				$datos = array();

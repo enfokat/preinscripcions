@@ -86,8 +86,9 @@ class CursoModel{
 	}
 	
 	public function borrar(){
-		@$consulta = "DELETE FROM cursos WHERE id='$this->id';";
+		$consulta = "DELETE FROM cursos WHERE id='$this->id';";
 		return Database::get()->query($consulta);
+		
 	}
 	
 }

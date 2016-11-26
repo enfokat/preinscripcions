@@ -20,7 +20,7 @@
 		?>
 
 		<section id="content">
-			<h2>Pre-Inscripcions</h2>
+			<h2 class="titul">Pre-Inscripcions</h2>
 			<p>Apunta't als cursos que t'interessin</p>
 			
 			<p>En aquest centre trobaràs un gran ventall de cursos a la teva mida.</p>
