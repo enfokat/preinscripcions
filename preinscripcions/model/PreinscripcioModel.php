@@ -34,6 +34,32 @@ class PreinscripcioModel{
 			return $preinscripcions;
 		}
 		
+		public function verPreinscripcionsAdm($id=0){
+			
+			//recuperar id de usuario
+			
+			
+			
+			//realizar consulta sin filtro
+			$consulta = "SELECT * FROM preinscripcions AS pre
+							JOIN usuaris AS u ON pre.id_usuari = u.id
+							JOIN cursos AS c ON pre.id_curs = c.id;";
+				
+			$datos = Database::get()->query($consulta);
+		
+			$preinscripcions = array();
+		
+		
+			while($preinscripcio = $datos->fetch_object('PreinscripcioModel'))
+				$preinscripcions[] = $preinscripcio;
+
+		
+				$datos->free();
+		
+				return $preinscripcions;
+		}
+		
+		
 		//recuperar una preinscripcio
 		public static function getPreinsc($u=0,$c=0){
 			$consulta = "SELECT * FROM preinscripcions WHERE id_usuari=$u AND id_curs=$c;";

@@ -43,3 +43,14 @@ h3,
 .titul{
 	color: orange;
 }
+
+.busca{
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	padding: 2%;
+}
+
+.busca>form{
+	flex: 1;
+}

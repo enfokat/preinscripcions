@@ -46,6 +46,17 @@ class Preinscripcio extends Controller{
 			$this->load_view('view/usuarios/preinscripcio.php', $datos);
 	}
 	
+	public function listarPreinscripcioAdm(){
+		
+		$this->load('model/PreinscripcioModel.php');
+		$preinsc = PreinscripcioModel::verPreinscripcionsAdm();
+		
+		$datos = array();
+		$datos['usuario'] = Login::getUsuario();
+		$datos['preinsc'] = $preinsc;
+		$this->load_view('view/cpannel/searchPreinscripcio.php', $datos);
+	}
+	
 	public function borrarPreinscripcio($c){
 		if(!Login::getUsuario())
 			throw new Exception('Només per als usuaris enregistrats');

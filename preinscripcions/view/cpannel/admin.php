@@ -71,8 +71,8 @@
 					<div>
 						<h3>Gestió Pre-inscripcions</h3>
 						<a href="index.php?controlador=Preinscripcio&operacion=guardarPreins&parametro=$cerca->dni">Agregar Pre-Inscripció</a><br/>
-						<a href="index.php?controlador=Preinscripcion&operacion=borrarPreinscAdm&parametro=$p->id">Llistar Pre-Inscripció</a><br/>
-						<a href="">Esborrar Pre-Inscripció</a><br/>
+						<a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcioAdm">Llistar Pre-Inscripció</a><br/>
+						<a href="index.php?controlador=Preinscripcion&operacion=borrarPreinscAdm&parametro=$p->id">Esborrar Pre-Inscripció</a><br/>
 						<a href="">Exportar XML</a><br/>
 						<a href="">Imprimir Llistat</a><br/>
 					</div>	
