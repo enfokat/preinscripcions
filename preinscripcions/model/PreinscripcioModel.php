@@ -34,11 +34,8 @@ class PreinscripcioModel{
 			return $preinscripcions;
 		}
 		
+		//muestra toda la lista
 		public function verPreinscripcionsAdm($id=0){
-			
-			//recuperar id de usuario
-			
-			
 			
 			//realizar consulta sin filtro
 			$consulta = "SELECT * FROM preinscripcions AS pre
@@ -53,6 +50,50 @@ class PreinscripcioModel{
 			while($preinscripcio = $datos->fetch_object('PreinscripcioModel'))
 				$preinscripcions[] = $preinscripcio;
 
+		
+				$datos->free();
+		
+				return $preinscripcions;
+		}
+		
+		//muestra las preinscripciones sobre un curso
+		public function verPreinscripcionsAdmCurs($id=0){
+				var_dump($id);
+			$consulta = "SELECT * FROM preinscripcions AS pre
+							JOIN usuaris AS u ON pre.id_usuari = u.id
+							JOIN cursos AS c ON pre.id_curs = c.id
+							WHERE c.id = '$id';";
+		
+			$datos = Database::get()->query($consulta);
+		
+			$preinscripcions = array();
+		
+		
+			while($preinscripcio = $datos->fetch_object('PreinscripcioModel'))
+				$preinscripcions[] = $preinscripcio;
+		
+		
+				$datos->free();
+		
+				return $preinscripcions;
+		}
+		
+		//muestra las preinscripciones sobre un curso
+		public function verPreinscripcionsAdmUsuari($dni=0){
+		
+			$consulta = "SELECT * FROM preinscripcions AS pre
+			JOIN usuaris AS u ON pre.id_usuari = u.id
+			JOIN cursos AS c ON pre.id_curs = c.id
+			WHERE u.dni = '$dni';";
+		
+			$datos = Database::get()->query($consulta);
+		
+			$preinscripcions = array();
+		
+		
+			while($preinscripcio = $datos->fetch_object('PreinscripcioModel'))
+				$preinscripcions[] = $preinscripcio;
+		
 		
 				$datos->free();
 		

@@ -20,7 +20,7 @@
 		?>
 
 		<section id="content">
-						<h2 class="titul">Panel de Control</h2>
+						<h2 class="titul">Taulell de Control</h2>
 			
 			<section class="admin">
 				<div class="col">

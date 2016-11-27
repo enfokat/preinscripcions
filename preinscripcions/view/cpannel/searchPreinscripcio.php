@@ -28,8 +28,26 @@
 
 			<form method="POST">
 				<label>Cercar Preinscripció per Curs</label>
-				<input type="text" name="cercaCurs"/>
+				<select name="cercaCurs">
+					<option value="0">Altres</option>
+					<option value="1">Soldadura</option>
+					<option value="2">Mecànica Convencional</option>
+					<option value="3">Disseny Mecànic</option>
+					<option value="4">Electricitat</option>
+					<option value="5">Logística</option>
+					<option value="6">Comunicacions - microinformàtica</option>
+					<option value="7">Programació i web</option>
+					<option value="8">PLCs i automatismes</option>
+					<option value="9">Pneumàtica i hidràulica</option>
+					<option value="10">e-commerce</option>
+					<option value="11">Fontanería, climatització i calefacció</option>
+				</select>
 				<input type="submit" name="cercadorCurs" value="cercar"/>
+			</form>
+			
+			<form method="POST">
+				<label>Veure Llistat complet</label><br/>
+				<input type="submit" name="" value="Veure totes les preinscriocions"/>
 			</form>
 		</section>
 

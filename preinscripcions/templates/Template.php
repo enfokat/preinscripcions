@@ -22,7 +22,7 @@
 			<form method="post" id="login" autocomplete="off">
 				<label>DNI:</label><input type="text" name="dni" required="required" onBlur="MaysPrimera(this);"/>
 				<label>Data Naixement:</label><input type="date" name="data_naixement" required="required"/>
-				<input type="submit" name="login" value="Login" />
+				<input type="submit" name="login" value="Entrar" />
 			</form>
 		<?php }
 		
@@ -41,7 +41,7 @@
 				</span>
 								
 				<form method="post">
-					<input type="submit" name="logout" value="Logout" />
+					<input type="submit" name="logout" value="Sortir" />
 				</form>
 				
 				<div class="clear"></div>
