@@ -78,7 +78,10 @@
 						
 		
 		?>
-			</table>
+		</table>
+		<form>
+			<input type="button" name="Imprimir" value="Imprimir" onclick="window.print();"/>
+		</form>				
 
 		</section>
 		

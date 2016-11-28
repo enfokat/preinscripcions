@@ -215,3 +215,9 @@ footer>p>.right{
 footer>p>.center{
 	margin-left: 25%;
 }
+
+@media print{
+	header, footer{
+	display:none;
+	}
+}
