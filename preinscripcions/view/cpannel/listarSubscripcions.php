@@ -31,15 +31,15 @@
 					<th>email</th>
 					<th>Esborrar</th>
 				</tr>	
-		<?php		
-				foreach($usuarios as $u){
+		<?php	
+				foreach($subs as $s){
 					echo "<tr>";
-					echo "<td>$u->nom</td>";
-					echo "<td>$u->cognom1</td>";
-					echo "<td>$u->cognom2</td>";
-					echo "<td>$u->dni</td>";
-					echo "<td>$u->email</td>";
-					echo "<td><a href=''>Esborrar</a></td>";
+					echo "<td>$s->nom</td>";
+					echo "<td>$s->data</td>";
+					echo "<td>$s->dni</td>";
+					echo "<td>$s->telefon_mobil</td>";
+					echo "<td>$s->email</td>";
+					echo "<td><a href='index.php?controlador=Subscripcions&operacion=borrar&u=$s->id_usuari&a=$s->id_area'>Esborrar</a></td>";
 					echo "<td></td>";
 					echo "</tr>";
 				}			
