@@ -79,6 +79,39 @@ class Preinscripcio extends Controller{
 		}
 	}
 	
+	public function printPreinscripcioAdm(){
+	
+		if(@$_POST['cercaUsuari']){
+			$dni = $_POST['cercaUsuari'];
+			$this->load('model/PreinscripcioModel.php');
+			$preinsc = PreinscripcioModel::verPreinscripcionsAdmUsuari($dni);
+				
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['preinsc'] = $preinsc;
+			$this->load_view('view/cpannel/printPreinscripcio.php', $datos);
+		}
+		elseif(@$_POST['cercaCurs']){
+			$id = $_POST['cercaCurs'];
+			$this->load('model/PreinscripcioModel.php');
+			$preinsc = PreinscripcioModel::verPreinscripcionsAdmCurs($id);
+				
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['preinsc'] = $preinsc;
+			$this->load_view('view/cpannel/printPreinscripcio.php', $datos);
+		}
+		else{
+			$this->load('model/PreinscripcioModel.php');
+			$preinsc = PreinscripcioModel::verPreinscripcionsAdm();
+	
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['preinsc'] = $preinsc;
+			$this->load_view('view/cpannel/printPreinscripcio.php', $datos);
+		}
+	}
+	
 	public function borrarPreinscripcio($c){
 		if(!Login::getUsuario())
 			throw new Exception('Només per als usuaris enregistrats');

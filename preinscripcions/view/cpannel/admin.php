@@ -72,9 +72,8 @@
 						<h3>Gestió Pre-inscripcions</h3>
 						<a href="index.php?controlador=Preinscripcio&operacion=guardarPreins&parametro=$cerca->dni">Agregar Pre-Inscripció</a><br/>
 						<a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcioAdm">Llistar Pre-Inscripció</a><br/>
-						<a href="index.php?controlador=Preinscripcio&operacion=borrarPreinscAdm&parametro=$p->id">Esborrar Pre-Inscripció</a><br/>
 						<a href="">Exportar XML</a><br/>
-						<a href="">Imprimir Llistat</a><br/>
+						<a href="index.php?controlador=Preinscripcio&operacion=printPreinscripcioAdm">Imprimir Llistat</a><br/>
 					</div>	
 				</div>
 			</section>
@@ -87,8 +86,6 @@
 					<div>
 						<h3>Gestión Subscripcions</h3>
 						<a href="index.php?controlador=Subscripcions&operacion=listar">Listar Subscripcions</a><br/>
-						<a href="">Eliminar Subscripció</a><br/>
-
 					</div>
 				</div>
 

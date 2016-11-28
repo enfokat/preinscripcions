@@ -40,8 +40,11 @@ class SubscripModel{
 		return Database::get()->query($consulta);
 	}
 	
-	public function nueva(){
-		
+	public function guardar(){
+		$consulta = "INSERT INTO subscripcions(id_usuari, id_area)
+					VALUES ('$this->id_usuari', '$this->id_area');";
+
+		return Database::get()->query($consulta);
 	}
 	
 }	

@@ -25,14 +25,6 @@ class Subscripcions extends Controller{
 		
 		if(empty($s))
 			throw new Exception("No s'ha trobat la preinscripcio");
-
-
-		//if(empty($_POST['borrar'])){
-			//$datos = array();
-			//$datos['usuario'] = Login::getUsuario();
-			//$datos['s'] = $s;
-			//$this->load_view('view/exito.php', $datos);
-		//}else{
 				
 			if(!$s->borrar())
 				throw new Exception("S'ha produït un error a l'esborrar");
@@ -41,10 +33,27 @@ class Subscripcions extends Controller{
 			$datos['usuario'] = Login::getUsuario();
 			$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
 			$this->load_view('view/exito.php', $datos);
-
-		
-		//}
 	}
 	
+	public function nuevo($id){
+		require_once 'model/SubscripModel.php';
+			
+		if(!Login::getUsuario())
+			throw new Exception ("has d'estar enregistrat");
+				
+			$subs = new SubscripModel();
+			$subs->id_usuari = Login::getUsuario()->id;
+			$subs->id_area = $id;
+
+			if(!$subs->guardar())
+				throw new Exception("No ha pogut inscribir-se");
+		
+		
+	
+		$datos = array();
+		$datos['usuario'] = Login::getUsuario();
+		$datos['mensaje'] = "T'has subscrit correctament al area formativa";
+		$this->load_view('view/exito.php', $datos);
+	}
 }
 ?>

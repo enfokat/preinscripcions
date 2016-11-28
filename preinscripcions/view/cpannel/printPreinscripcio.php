@@ -71,7 +71,7 @@
 					echo "<td>"; echo $fecha->format("d/m/Y"); echo "</td>";					
 					echo "<td>$p->telefon_mobil</td>";
 					echo "<td id='borrar'><a href='index.php?controlador=Preinscripcio&operacion=borrarPreinscAdm&u=$p->id_usuari&c=$p->id_curs'>
-					<img src='images/papelera.png' title='Borrar'/>
+					<img class='icon' src='images/borrar.png' title='Borrar'/>
 					<fidcation</a></td>";
 					echo "</tr>";
 				}	
@@ -79,7 +79,9 @@
 		
 		?>
 		</table>
-			
+		<form>
+			<button type="button" name="imprimir" value="imprimir" onclick="window.print();" class="buttonPrint"><img src="images/print.png"> Imprimir</button>
+		</form>				
 
 		</section>
 		

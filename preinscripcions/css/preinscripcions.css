@@ -54,3 +54,18 @@ h3,
 .busca>form{
 	flex: 1;
 }
+
+.icon{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.buttonPrint{
+	padding: 1%;
+	font-size: 1.5em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+}

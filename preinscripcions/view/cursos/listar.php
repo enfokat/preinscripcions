@@ -40,7 +40,7 @@
 				echo "<td>$curso->descripcio</td>";
 				echo "<td>$curso->hores hores</td>";
 				echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
-				<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
+				<img class='icon' src='images/info.png' width='60' title='Ver'/></a></td>";
 				echo "</tr>";
 			}			
 		}else{
@@ -63,7 +63,7 @@
 					echo "<td>$curso->descripcio</td>";
 					echo "<td>$curso->hores hores</td>";
 					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
-					<img src='images/ver.jpeg' width='60' title='Ver'/></a></td>";
+					<img class='icon' src='images/info.png' width='60' title='Ver'/></a></td>";
 					echo "</tr>";
 				}				
 		}

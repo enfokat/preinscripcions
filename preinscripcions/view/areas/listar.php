@@ -36,7 +36,7 @@
 				echo "<tr><form method='post'>";
 				echo "<td>$a->id</td>";
 				echo "<td>$a->nom</td>";
-				echo "<td><input type='submit' name='subs' value='Subscribir-me'/></td>";
+				echo "<td><a href='index.php?controlador=subscripcions&operacion=nuevo&parametro=$a->id'><img class='icon' src='images/guardar.png'/></a></td>";
 				echo "</form></tr>";
 			}					
 ?>
