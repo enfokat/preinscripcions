@@ -86,8 +86,7 @@
 					</figure>
 					<div>
 						<h3>Gestión Subscripcions</h3>
-						<a href="">Listar Usuaris Subscrits</a><br/>
-						<a href="">Agregar Subscripció</a><br/>
+						<a href="index.php?controlador=Subscripcions&operacion=listar">Listar Subscripcions</a><br/>
 						<a href="">Eliminar Subscripció</a><br/>
 
 					</div>

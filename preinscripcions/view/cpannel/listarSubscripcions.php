@@ -26,10 +26,9 @@
 				<tr>
 					<th>Area Formativa</th>		
 					<th>Data Subscripció</th>
-					<th>Nom</th>					
-					<th></th>
+					<th>Dni</th>					
+					<th>Telefón Móvil</th>
 					<th>email</th>
-					<th>Modificar</th>
 					<th>Esborrar</th>
 				</tr>	
 		<?php		
@@ -40,7 +39,6 @@
 					echo "<td>$u->cognom2</td>";
 					echo "<td>$u->dni</td>";
 					echo "<td>$u->email</td>";
-					echo "<td><a href=''>Modificar</a></td>";
 					echo "<td><a href=''>Esborrar</a></td>";
 					echo "<td></td>";
 					echo "</tr>";
