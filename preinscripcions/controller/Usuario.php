@@ -40,12 +40,12 @@
 								
 				//guardar el usuario en BDD
 				if(@!$u->guardar())
-					throw new Exception('No se pudo registrar el usuario');
+					throw new Exception("No s'ha pogut registrar el usuarii");
 				
 				//mostrar la vista de éxito
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
-				$datos['mensaje'] = 'Operación de registro completada con éxito';
+				$datos['mensaje'] = 'Operació de registre completada exitosament';
 				$this->load_view('view/exito.php', $datos);
 			//}
 		}
@@ -55,7 +55,7 @@
 		public function modificacion(){
 			//si no hay usuario identificado... error
 			if(!Login::getUsuario())
-				throw new Exception('Debes estar identificado para poder modificar tus datos');
+				throw new Exception("Per modificar les teves dades, tens d'estar validat corerctament");
 				
 			//si no llegan los datos a modificar
 			if(empty($_POST['modificar'])){
@@ -87,7 +87,7 @@
 				
 				//modificar el usuario en BDD
 				if(!$u->actualizar())
-					throw new Exception('No se pudo modificar');
+					throw new Exception("No s'ha pogut modificar");
 		
 						
 				//hace de nuevo "login" para actualizar los datos del usuario
@@ -97,7 +97,7 @@
 				//mostrar la vista de éxito
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
-				$datos['mensaje'] = 'Datos de Usuario modificados correctamente';
+				$datos['mensaje'] = 'Les Dades de Usuari modificades correctament';
 				$this->load_view('view/exito.php', $datos);
 			}
 		}
@@ -179,7 +179,7 @@
 				
 			
 			if(!$u->borrar())
-				throw new Exception('Se produjo un error al borrar');
+				throw new Exception("S'ha produït un error al esborrar!");
 
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
@@ -232,12 +232,12 @@
 				//modificar el usuario en BDD
 				$this->load('model/UsuarioModel.php');
 				if(!$u->actualizar2())
-					throw new Exception('No se pudo modificar');
+					throw new Exception("No s'ha pogut modificar");
 										
 					//mostrar la vista de éxito
 					$datos = array();
 					$datos['usuario'] = Login::getUsuario();
-					$datos['mensaje'] = 'Datos de Usuario modificados correctamente';
+					$datos['mensaje'] = 'Les Dades del Usuari modificades correctament';
 					$this->load_view('view/exito.php', $datos);
 				
 				

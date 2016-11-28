@@ -23,7 +23,7 @@
 			if(@$datos['usuario']->admin == 1){
 				$this->load_view('view/cpannel/admin.php', $datos);
 			}else{
-				throw new Exception('Solo Admin');
+				throw new Exception('Només usuaris Administradors');
 			}
 		}	
 	

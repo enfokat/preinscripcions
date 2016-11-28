@@ -45,7 +45,7 @@ class Curso extends Controller{
 			$curso = CursoModel::getCurso($id);
 	
 			if(!$curso)
-				throw new Exception('No se encuentra el curso');
+				throw new Exception("No s'ha trobat curs");
 	
 				//pasar el curso a la vista
 				$datos = array();

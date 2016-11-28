@@ -7,7 +7,7 @@
 		//método load() carga un modelo, controlador, librería o template:
 		protected function load($ruta){
 			if(!is_readable($ruta)) 
-				throw new Exception('No se puede cargar '.$ruta);
+				throw new Exception("No s'ha pogut carregar ".$ruta);
 			
 			require_once($ruta); //carga el fichero
 		}
@@ -18,7 +18,7 @@
 		protected function load_view($ruta, $data=array()){			
 			//si no se encuentra el fichero con la vista...
 			if(!is_readable($ruta)) 
-				throw new Exception('No se encontró la vista '.$ruta);
+				throw new Exception("No s'ha trobat la vista ".$ruta);
 			
 			//remapear los datos del array u objeto de entrada en vars independientes
 			if(is_array($data) || is_object($data))

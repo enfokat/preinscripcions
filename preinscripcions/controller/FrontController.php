@@ -32,7 +32,7 @@
 			
 				//si el controlador no existe, ERROR
 				if(!is_readable('controller/'.$controlador.'.php'))
-					throw new Exception('no existe el controlador '.$controlador);
+					throw new Exception('no existeix el controlador '.$controlador);
 				
 				//si existe, lo cargamos
 				$this->load('controller/'.$controlador.'.php');
@@ -45,7 +45,7 @@
 				
 				//si no existe la operación, ERROR
 				if(!is_callable(array($controlador, $operacion)))
-					throw new Exception('no existe la operación '.$operacion);
+					throw new Exception('no existeix la operació '.$operacion);
 				
 				//recuperar el parámetro que viene por GET	
 				$parametro = empty($_GET['parametro'])? '' : $_GET['parametro'];
