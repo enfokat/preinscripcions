@@ -21,7 +21,7 @@
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
 				<label>DNI:</label><input type="text" name="dni" required="required" onBlur="MaysPrimera(this);"/>
-				<label>Data Naixement:</label><input type="date" name="data_naixement" required="required"/>
+				<label>Data Naixement:</label><input type="date" name="data_naixement" required="required" placeholder="aaaa-mm-dd"/>
 				<input type="submit" name="login" value="Entrar" />
 			</form>
 		<?php }
