@@ -78,7 +78,7 @@
 		public static function footer(){	?>
 			<footer>
 				<p>  
-					<a href="index.php?controlador=Welcome&operacion=about">Acerca de...</a>
+					<a href="index.php?controlador=Welcome&operacion=about">Acerca de...</a>   ||   <a href="index.php?controlador=Welcome&operacion=privacitat">Privacitat</a>
 					<a class="center" href="index.php">Pre-Inscripcions - CIFO del Vallès</a>
 					<a class="right" href="">Robs Micro Framework</a> 
          		</p>

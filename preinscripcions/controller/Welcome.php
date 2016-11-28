@@ -21,5 +21,13 @@
 			//cargar la vista
 			$this->load_view('view/about.php', $datos);
 		}
+		
+		public function privacitat(){
+			//preparar los datos a pasar a la vista
+			$datos = array('usuario'=>Login::getUsuario());
+				
+			//cargar la vista
+			$this->load_view('view/privacitat.php', $datos);
+		}
 	}
 ?>
