@@ -6,7 +6,7 @@
 			<header>
 				<figure>
 					<a href="index.php">
-						<img class="banner" alt="Cifo Vallès logo" src="images/logos/header.jpg" />
+						<img class="banner" alt="Cifo Vallès logo" src="images/logos/cursos.jpg" />
 					</a>
 				</figure>
 				<hgroup>
