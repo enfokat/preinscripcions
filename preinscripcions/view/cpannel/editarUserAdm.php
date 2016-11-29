@@ -27,7 +27,7 @@
 			</form>
 		</section>
 
-		<section id="content">
+		<section id="content" >
 			<h2>Llistat dels Usuaris registrats</h2>
 						
 			<table id='tabla'>

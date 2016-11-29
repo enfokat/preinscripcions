@@ -19,8 +19,8 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-		<section>
-			<h2>Modificar les dades del usuari</h2>
+		<section class="centrado" id="content">
+			<h2 class="titul">Modificar les dades del usuari</h2>
 			
 				<form method="post"  autocomplete="off">
 			
@@ -167,11 +167,7 @@
 				<input type="reset" name="reset" value="Cancelar"/>
 			</form>
 				<br/><br/><br/>	
-							<form  method="post" action="index.php?controlador=Usuario&operacion=baja&parametro=<?php echo $selec->id; ?>">
-										<h3>Baixa del Servei</h3>
-										<p>Si dessitjes esborrar el teu compte d' aquest sistema, fes click en el botÃ³ de sota, totes les teves inscripcions seran esborrades automÃ¡ticament.</p>
-										<input type="submit" name=" baja" value="Baixa del Servei"/>
-							</form>
+
 			
 
 		</section>

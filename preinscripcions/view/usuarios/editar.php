@@ -19,8 +19,8 @@
 			Template::menu($usuario); //pone el menÃº
 		?>
 		
-		<section id="content">
-			<h2>Les meves Dades</h2>
+		<section id="content" class="centrado">
+			<h2 class="titul">Les meves Dades</h2>
 			<form method="post"  autocomplete="off">
 			
 				<label>Nom:</label>

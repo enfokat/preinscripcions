@@ -52,9 +52,7 @@
 			echo "<th>Nom</th>";
 			echo "<th>Descripció</th>";
 			echo "<th>Duració</th>";
-			echo "<th></th>";
-			echo "<th></th>";
-			echo "<th></th>";
+			echo "<th>Detalls</th>";
 			echo "</tr>";			
 				foreach($inscrits as $curso){ 
 					echo "<tr>";
@@ -66,8 +64,6 @@
 					echo "<td>$curso->hores hores</td>";
 					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
 					<img class='icon' src='images/info.png' width='60' title='Ver'/></a></td>";
-					echo "<td><a href=''><img class='icon' src='images/editar.png' width='60' title='Ver'/></a></td>";
-					echo "<td><a href=''><img class='icon' src='images/borrar.png' width='60' title='Ver'/></a></td>";
 					echo "</tr>";
 				}				
 		}
