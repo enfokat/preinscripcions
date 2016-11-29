@@ -105,7 +105,7 @@ header hgroup{
 }
 
 #login input{
-	width: 80px;
+	width: 100px;
 }
 
 #logout img{
@@ -182,7 +182,8 @@ nav ul.menu>li:hover{
 	background-color: #eef;
 }
 
-#content form input{
+#content form input,
+#content form select{
 	margin-top: 5px;
 	padding: 4px;
 }

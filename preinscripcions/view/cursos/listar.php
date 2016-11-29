@@ -20,7 +20,7 @@
 		?>
 
 		<section id="content">
-			<h1>Listado de cursos</h1>
+			<h1 class="titul">Listado de cursos</h1>
 			<table id='tabla'>	
 	<?php 
 		if(!$usuario){ //poner el formulario de acceso para no registrado
@@ -71,6 +71,7 @@
 
 	</table>		
 		</section>
+			<br/><br/>
 		
 		<?php Template::footer();?>
     </body> 

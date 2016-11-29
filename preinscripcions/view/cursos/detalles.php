@@ -20,26 +20,39 @@
 		?>
 
 		<section id="content">
-			<article id="lista">
+			<article id="lista" class="verCurso">
 				<h1>Detalls del curs:</h1>
+				<hr>
 				
-				<h2><?php echo "Codi: $curso->codi, nom: $curso->nom";?></h2>
+				<h2><?php echo $curso->nom;?></h2>
 				
-				<ul>
-					<li><b>Codi: </b><?php echo $curso->codi;?></li>				
-					<li><b>id_area: </b><?php echo $curso->id_area;?></li>
-					<li><b>Nom: </b><?php echo $curso->nom;?></li>
-					<li><b>Descripcio: </b><?php echo $curso->descripcio;?></li>
-					<li><b>Hores: </b><?php echo $curso->hores;?></li>
-					<li><b>Data_inici: </b><?php echo $curso->data_inici;?></li>
-					<li><b>Data_fi: </b><?php echo $curso->data_fi;?></li>
-					<li><b>Horari: </b><?php echo $curso->horari;?></li>
-					<li><b>Torn: </b><?php echo $curso->torn;?></li>
-					<li><b>Tipus: </b><?php echo $curso->tipus;?></li>
-					<li><b>Requisits: </b><?php echo $curso->requisits;?></li>			
-				</ul>
+				<article class="caract">
+					<div>
+						<p><b>Tipus: </b>  <?php echo $curso->tipus;?></p>
+						<p><b>Hores:</b> <?php echo $curso->hores;?></p>
+						<p><b>Requisits:</b> <?php echo $curso->requisits;?></p>
+					</div>
+					<figure>
+						<img src="images/areas/<?php echo $curso->id_area;?>.jpeg" height=200  width=150>
+					</figure>
+				</article>	
+				
+				<article class="infCurs">
+						<h1>Descripció del Curs</h1>
+						<p><?php echo $curso->descripcio;?></p>
+				</article>
+				
+				<article class="infCurs"> 
+						<h1>Informació del Curs</h1>
+						<p><b>Data de Inici: </b> <?php echo $curso->data_inici;?></p>
+						<p><b>Data Finalització: </b> <?php echo $curso->data_fi;?></p>
+						<p><b>Horari: </b> <?php echo $curso->horari;?></p>
+						<p><b>Torn: </b> <?php echo $curso->torn;?></p>
+				</article>
+				
+
 				<form method="post" action="index.php?controlador=preinscripcio&operacion=crear&parametro=<?php echo $curso->id;?>">
-					<input type="submit" name="guardar" value="inscribir-me" />
+					<button type="submit" class="buttonInscr" name="guardar" value="inscribir-me" ><img src="images/editar.png"> Inscriure'm</button>
 				</form>
 			</article>
 		</section>

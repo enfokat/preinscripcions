@@ -19,8 +19,8 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-		<section id="content">
-			<h2>Formulario de registro</h2>
+		<section id="content" class="centrado">
+			<h2 class="titul">Formulario de registro</h2>
 			<form method="post"  autocomplete="off">
 			
 				<label>Nom:</label>
@@ -47,7 +47,7 @@
 				<label>E-mail:</label>
 				<input type="email" name="email" required="required"/><br/>	
 				
-				<label> Nivell d'estudis</label>
+				<label> Nivell d'estudis:</label>
 				<select name="estudis">
 					<option></option>
 					<option value="0">Sense Estudis</option>
@@ -57,25 +57,25 @@
 					<option value="4">Cicles Formatius Grau Superior</option>
 					<option value="5">Batxillerat</option>
 					<option value="6">Estudis Universitaris</option>
-				</select><br/>
+				</select><br/><br/>
 				
-				<label>Situació Laboral</label>
-					<input type="radio" name="situacio_laboral" value="0"/><label>Desempleat</label> 
-					<input type="radio" name="situacio_laboral" value="1"/><label>Empleat</label> 
-				<br/>
+				<label>Situació Laboral:</label><br/><br/>
+					<input type="radio" name="situacio_laboral" value="0"/> <label>Desempleat</label> 
+					<input type="radio" name="situacio_laboral" value="1"/> <label>Empleat</label> 
+				<br/><br/>
 				
-				<label>¿Rep alguna prestació?</label>
-				<input type="radio" name="prestacio" value="1"/><label>SÍ</label> 
-				<input type="radio" name="prestacio" value="0"/><label>NO</label> 
+				<label>¿Rep alguna prestació?</label><br/><br/>
+				<input type="radio" name="prestacio" value="1"/> <label>SÍ</label> 
+				<input type="radio" name="prestacio" value="0"/> <label>NO</label> 
 					
 <br/><br/><br/>
 				
-				<label></label>
-				<input type="submit" name="guardar" value="guardar"/>
-				<input type="reset" name="reset" value="Esborrar"/><br/>
+				<button class="buttonForm save"  type="button"  name="guardar" value="guardar"><img src="images/guardar.png"> Registrar-me</button>
+				<button class="buttonForm reset"  type="reset"  name="reset" value="esborrar"><img src="images/borrar.png"> Cancel.lar</button>
+
 			</form>
 		</section>
-		
+<br/><br/><br/>		
 		<?php Template::footer();?>
     </body>
 </html>

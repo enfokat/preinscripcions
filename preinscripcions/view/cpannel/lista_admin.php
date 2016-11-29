@@ -66,8 +66,8 @@
 					echo "<td>$curso->hores hores</td>";
 					echo "<td><a href='index.php?controlador=Curso&operacion=ver&parametro=$curso->id'>
 					<img class='icon' src='images/info.png' width='60' title='Ver'/></a></td>";
-					echo "<td><a href=''>Modificar</a></td>";
-					echo "<td><a href=''>Esborrar</a></td>";
+					echo "<td><a href=''><img class='icon' src='images/editar.png' width='60' title='Ver'/></a></td>";
+					echo "<td><a href=''><img class='icon' src='images/borrar.png' width='60' title='Ver'/></a></td>";
 					echo "</tr>";
 				}				
 		}

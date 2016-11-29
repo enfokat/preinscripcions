@@ -20,11 +20,11 @@
 		?>
 
 		<section id="content">
-			<h1>¿Vols Rebre Informació?</h1>
+			<h1 class="titul">¿Vols Rebre Informació?</h1>
 			
 			<p>Per Rebre informació sobre els futurs cursos que es publiquin, tens de estar enregistrat en aquesta aplicació, i fer click al botó "Subscribir-me" de l'àrea que t'interisi. </p>		
 		
-			<h1>Listado de cursos</h1>
+			<h1 class="titul">Listado de cursos</h1>
 			<table id='tabla'>	
 	<?php 
 			echo "<tr>";			
@@ -43,6 +43,7 @@
 
 	</table>		
 		</section>
+		<br/><br/>
 		
 		<?php Template::footer();?>
     </body> 

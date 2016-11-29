@@ -62,11 +62,69 @@ h3,
 	margin-right: auto;
 }
 
-.buttonPrint{
+.buttonPrint,
+.buttonInscr{
 	padding: 1%;
 	font-size: 1.5em;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 2%;
+}
+
+.buttonForm{
+	width: 150px;
+	height: 50px;
+	padding: 0.5%;
+	font-weight: bold;
+	font-size: 1em;
+	border-radius: 5px 5px 5px 5px;
+	color: black;
+	text-align: center;
+	margin-left: 5%;
+}
+
+.save{
+	background-color: #58FA58;
+}
+
+.reset{
+	background-color: red;
+}
+
+.verCurso{
+	box-shadow: 2px 5px 5px grey;
+	background-color: #F2F2F2;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 4%;
+
+}
+
+.caract{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2%;
+}
+
+.caract>div,
+.caract>figure{
+	flex: 1;
+}
+
+.caract>div{
+	padding-top: 50px;
+}
+
+.caract>figure{
+	text-align: center;
+}
+
+.infCurs{
+		padding: 2%;
+}
+
+.centrado{
+	margin-left: 20%;
+	margin-right: 20%;
 }

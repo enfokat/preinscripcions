@@ -20,8 +20,8 @@
 		//PONE EL FORMULARIO DE LOGIN  
 		public static function login(){?>
 			<form method="post" id="login" autocomplete="off">
-				<label>DNI:</label><input type="text" name="dni" required="required" onBlur="MaysPrimera(this);"/>
-				<label>Data Naixement:</label><input type="date" name="data_naixement" required="required" placeholder="aaaa-mm-dd"/>
+				<label>DNI:</label><input type="text" name="dni" required="required" onBlur="Mayus(this);"/>
+				<label>Data Naixement:</label><input type="date" name="data_naixement" required="required" placeholder="AAAA-MM-DD"/>
 				<input type="submit" name="login" value="Entrar" />
 			</form>
 		<?php }
