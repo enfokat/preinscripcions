@@ -176,7 +176,12 @@
 		if(empty($u))
 			throw new Exception("No s'ha trobat la preinscripció");
 		
-				
+			if(empty($_POST['borrar'])){
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['baja'] = $u;
+				$this->load_view('view/usuarios/borrar.php', $datos);
+			}else{		
 			
 			if(!$u->borrar())
 				throw new Exception("S'ha produït un error a l'esborrar!");
@@ -186,6 +191,7 @@
 			$datos['mensaje'] = 'ESBORRAT OK';
 			$this->load_view('view/exito.php', $datos);
 
+			}
 		}
 
 		public function admModificar(){

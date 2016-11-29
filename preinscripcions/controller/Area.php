@@ -117,6 +117,13 @@
 		if(empty($a))
 			throw new Exception("No s'ha trobat aquesta àrea formativa");
 		
+			if(empty($_POST['borrar'])){
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['areas'] = $a;
+				$this->load_view('view/usuarios/borrar.php', $datos);
+			}else{
+		
 			if(!$a->borrar())
 				throw new Exception("S'ha produït un error");
 	
@@ -125,7 +132,8 @@
 				$datos['mensaje'] = 'BORRAT OK';
 				$this->load_view('view/exito.php', $datos);
 	
-	}
+			}
+		}
 	
 			
 	}

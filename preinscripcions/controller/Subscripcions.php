@@ -25,6 +25,13 @@ class Subscripcions extends Controller{
 		
 		if(empty($s))
 			throw new Exception("No s'ha trobat la preinscripció");
+		
+			if(empty($_POST['borrar'])){
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['subscripcio'] = $s;
+				$this->load_view('view/usuarios/borrar.php', $datos);
+			}else{
 				
 			if(!$s->borrar())
 				throw new Exception("S'ha produït un error a l'esborrar");
@@ -33,6 +40,7 @@ class Subscripcions extends Controller{
 			$datos['usuario'] = Login::getUsuario();
 			$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
 			$this->load_view('view/exito.php', $datos);
+		}
 	}
 	
 	public function nuevo($id){

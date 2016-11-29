@@ -183,6 +183,13 @@ class Curso extends Controller{
 			
 			if(empty($c))
 				throw new Exception("No s'ha trobat el curs");
+			
+			if(empty($_POST['borrar'])){
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['curso'] = $c;
+				$this->load_view('view/usuarios/borrar.php', $datos);
+			}else{
 		
 				if(!$c->borrar())
 					throw new Exception("S'ha produït un error");
@@ -192,6 +199,7 @@ class Curso extends Controller{
 					$datos['mensaje'] = 'BORRADO OK';
 					$this->load_view('view/exito.php', $datos);
 		
+			}
 		}
 		
 		
