@@ -79,11 +79,11 @@
 		
 		?>
 		</table>
-		<form method="post" style="text-align: right;" action="index.php?controlador=Preinscripcio&operacion=expXml">
+		<!--   <form method="post" style="text-align: right;" action="index.php?controlador=Preinscripcio&operacion=expXml">
 			<span>Descargar</span>
 			<input type="checkbox" name="descargar todas las preinscripciones" value="1"/>
 			<input type="submit" name="axml" value="a XML" />
-		</form>	
+		</form>	 -->
 
 		</section>
 		

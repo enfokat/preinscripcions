@@ -72,7 +72,7 @@
 						<h3>Gestió Pre-inscripcions</h3>
 						<a href="index.php?controlador=Preinscripcio&operacion=guardarPreins&parametro=$cerca->dni">Agregar Pre-Inscripció</a><br/>
 						<a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcioAdm">Llistar Pre-Inscripció</a><br/>
-						<a href="index.php?controlador=Preinscripcio&operacion=expXml">Exportar XML</a><br/>
+						<a href="index.php?controlador=Preinscripcio&operacion=xmlPreinscripcioAdm">Exportar XML</a><br/>
 						<a href="index.php?controlador=Preinscripcio&operacion=printPreinscripcioAdm">Imprimir Llistat</a><br/>
 					</div>	
 				</div>

@@ -249,6 +249,18 @@ class Preinscripcio extends Controller{
 			$this->load_view('view/xml.php', $datos);
 	}
 	
+	public function xmlPreinscripcioAdm(){
+
+			$this->load('model/PreinscripcioModel.php');
+			$preinsc = PreinscripcioModel::verPreinscripcionsAdm();
+		
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['preinsc'] = $preinsc;
+			$this->load_view('view/cpannel/searchPreinscxml.php', $datos);
+				
+	}
+	
 }
 	
 
