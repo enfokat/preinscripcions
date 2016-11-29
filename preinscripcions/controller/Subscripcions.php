@@ -24,7 +24,7 @@ class Subscripcions extends Controller{
 
 		
 		if(empty($s))
-			throw new Exception("No s'ha trobat la preinscripcio");
+			throw new Exception("No s'ha trobat la preinscripció");
 				
 			if(!$s->borrar())
 				throw new Exception("S'ha produït un error a l'esborrar");
@@ -52,7 +52,7 @@ class Subscripcions extends Controller{
 	
 		$datos = array();
 		$datos['usuario'] = Login::getUsuario();
-		$datos['mensaje'] = "T'has subscrit correctament al area formativa";
+		$datos['mensaje'] = "T'has subscrit correctament a l'àrea formativa";
 		$this->load_view('view/exito.php', $datos);
 	}
 }

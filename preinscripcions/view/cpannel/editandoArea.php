@@ -23,7 +23,7 @@
 			<h2>Agregar Àrea Formativa</h2>
 			
 			<form method="post">
-				<label>Editar Área Formativa</label>
+				<label>Editar Àrea Formativa</label>
 				<input name="nom"  type="text"  value="<?php echo $area->nom; ?>">
 				<input type="submit" name="guardar" value="Guardar">
 			</form>

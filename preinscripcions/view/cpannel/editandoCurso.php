@@ -29,7 +29,7 @@
 				<label>Codi:</label>
 				<input type="text" name="codi" required="required" value="<?php echo $curso->codi;?>"/><br/>
 				
-				<label>Area Formativa:</label>
+				<label>Àrea Formativa:</label>
 					<select name="id_area">
 					<?php 
 					switch ($curso->id_area) {

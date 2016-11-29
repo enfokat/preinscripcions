@@ -185,7 +185,7 @@ class Curso extends Controller{
 				throw new Exception("No s'ha trobat el curs");
 		
 				if(!$c->borrar())
-					throw new Exception("Ha ocorregut un error");
+					throw new Exception("S'ha produït un error");
 		
 					$datos = array();
 					$datos['usuario'] = Login::getUsuario();

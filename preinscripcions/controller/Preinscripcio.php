@@ -28,7 +28,7 @@ class Preinscripcio extends Controller{
 	//veure preinscripcions
 	public function listarPreinscripcio(){
 		if(!Login::getUsuario())
-			throw new Exception('Solo para los usuarios registrados');
+			throw new Exception('Només per als usuaris enregistrats');
 		
 		$this->load('model/PreinscripcioModel.php');
 				
@@ -37,7 +37,7 @@ class Preinscripcio extends Controller{
 		$preinscripcions = PreinscripcioModel::verPreinscripcions($id_usuari);
 	
 		if(!$preinscripcions)
-			throw new Exception('No se encuentra las preinscripciones');
+			throw new Exception('No es troba les preinscripcions');
 	
 			//pasar el curso a la vista
 			$datos = array();
@@ -122,7 +122,7 @@ class Preinscripcio extends Controller{
 		$preinscripcion = PreinscripcioModel::getPreinsc($u,$c);				
 				
 		if(empty($preinscripcion))
-			throw new Exception("No s'ha trobat la preinscripcio");
+			throw new Exception("No s'ha trobat la preinscripció");
 		
 				
 		if(empty($_POST['borrar'])){
@@ -133,7 +133,7 @@ class Preinscripcio extends Controller{
 		}else{
 			
 			if(!$preinscripcion->eliminarPreinscripcio())
-				throw new Exception('Se produjo un error al borrar');
+				throw new Exception("S'ha produït un error a l'esborrar");
 
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
@@ -167,7 +167,7 @@ class Preinscripcio extends Controller{
 			$usuari = UsuarioModel::getUsuario($dni); 
 			
 			if(empty($usuari))
-				throw new Exception ("No existe el usuario con dni ".$dni);
+				throw new Exception ("No existeix l'usuari amb dni ".$dni);
 			
 			$this->load('model/CursoModel.php');
 			$cursos = CursoModel::getCursos();
@@ -188,7 +188,7 @@ class Preinscripcio extends Controller{
 			$preinscripcio->id_curs = intval($_POST['id_curs']);
 			
 			if(!$preinscripcio->guardar())
-				throw new Exception("inscripcio no realitzada");
+				throw new Exception("inscripció no realitzada");
 			
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
@@ -207,7 +207,7 @@ class Preinscripcio extends Controller{
 		$preinsc = PreinscripcioModel::getPreinsc($id_usuari,$id_curs);
 
 		if(empty($preinsc))
-			throw new Exception("No s'ha trobat la preinscripcio");
+			throw new Exception("No s'ha trobat la preinscripció");
 
 
 		if(empty($_POST['borrar'])){

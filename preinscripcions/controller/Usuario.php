@@ -174,16 +174,16 @@
 			$u = UsuarioModel::getUsuario($dni);
 			
 		if(empty($u))
-			throw new Exception("No s'ha trobat la preinscripcio");
+			throw new Exception("No s'ha trobat la preinscripció");
 		
 				
 			
 			if(!$u->borrar())
-				throw new Exception("S'ha produït un error al esborrar!");
+				throw new Exception("S'ha produït un error a l'esborrar!");
 
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-			$datos['mensaje'] = 'BORRADO OK';
+			$datos['mensaje'] = 'ESBORRAT OK';
 			$this->load_view('view/exito.php', $datos);
 
 		}
@@ -237,7 +237,7 @@
 					//mostrar la vista de éxito
 					$datos = array();
 					$datos['usuario'] = Login::getUsuario();
-					$datos['mensaje'] = 'Les Dades del Usuari modificades correctament';
+					$datos['mensaje'] = "Les Dades de l'Usuari han estat modificades correctament";
 					$this->load_view('view/exito.php', $datos);
 				
 				

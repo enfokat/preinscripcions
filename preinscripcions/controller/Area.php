@@ -26,7 +26,7 @@
 							//mostrar la vista de éxito
 							$datos = array();
 							$datos['usuario'] = Login::getUsuario();
-							$datos['mensaje'] = "El area s'ha salvat exitosament";
+							$datos['mensaje'] = "L'àrea s'ha salvat exitosament";
 
 							$this->load_view('view/exito.php', $datos);
 						}
@@ -115,14 +115,14 @@
 		$a = AreaModel::getArea($id);
 
 		if(empty($a))
-			throw new Exception("No s'ha trobat aquesta area formativa");
+			throw new Exception("No s'ha trobat aquesta àrea formativa");
 		
 			if(!$a->borrar())
-				throw new Exception("Ha ocorregut un error");
+				throw new Exception("S'ha produït un error");
 	
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
-				$datos['mensaje'] = 'BORRADO OK';
+				$datos['mensaje'] = 'BORRAT OK';
 				$this->load_view('view/exito.php', $datos);
 	
 	}
