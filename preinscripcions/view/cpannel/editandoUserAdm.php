@@ -162,9 +162,9 @@
 					</select>
 				<br/><br/><br/>
 						
+				<button class="buttonForm save"  type="button"  name="guardar" value="guardar"><img src="images/guardar.png"> Guardar</button>
+				<button class="buttonForm reset"  type="reset"  name="reset" value="cancelar"><img src="images/borrar.png"> Cancel.lar</button>
 				
-				<input type="submit" name="modificar" value="Salvar canvis"/>
-				<input type="reset" name="reset" value="Cancelar"/>
 			</form>
 				<br/><br/><br/>	
 

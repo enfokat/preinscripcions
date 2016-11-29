@@ -30,7 +30,7 @@
 					<th>Data Inici curs</th>
 					<th>Descripció</th>
 					<th>Duració</th>
-					<th></th>
+					<th>Esborrar</th>
 				</tr>	
 		<?php		
 				foreach($preinscripcions as $p){
@@ -40,12 +40,11 @@
 					$fecha = new DateTime($p->data);										
 					//echo "<td>$p->data</td>";
 					echo "<td>"; echo $fecha->format("d/m/Y"); echo "</td>";
-					echo "<td>$p->data</td>";
 					echo "<td>$p->data_inici</td>";
 					echo "<td>$p->descripcio</td>";
 					echo "<td>$p->hores hores</td>";
 					echo "<td id='borrar'><a href='index.php?controlador=Preinscripcio&operacion=borrarPreinscripcio&parametro=$p->id'>
-					<img src='images/papelera.png' title='Borrar'/>
+					<img  class='icon' src='images/borrar.png' title='Borrar'/>
 					<fidcation</a></td>";				
 					echo "</tr>";
 				}			

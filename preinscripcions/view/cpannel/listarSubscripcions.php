@@ -20,7 +20,7 @@
 		?>
 
 		<section id="content">
-						<h2>Llistat de Subscripcions</h2>
+						<h2 class="titul">Llistat de Subscripcions</h2>
 						
 						<table id='tabla'>
 				<tr>
@@ -39,8 +39,7 @@
 					echo "<td>$s->dni</td>";
 					echo "<td>$s->telefon_mobil</td>";
 					echo "<td>$s->email</td>";
-					echo "<td><a href='index.php?controlador=Subscripcions&operacion=borrar&u=$s->id_usuari&a=$s->id_area'>Esborrar</a></td>";
-					echo "<td></td>";
+					echo "<td><a href='index.php?controlador=Subscripcions&operacion=borrar&u=$s->id_usuari&a=$s->id_area'><img class='icon' src='images/borrar.png'></a></td>";
 					echo "</tr>";
 				}			
 		

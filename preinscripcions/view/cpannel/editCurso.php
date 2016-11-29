@@ -28,7 +28,7 @@
 		</section>
 
 		<section id="content">
-			<h2>Curs sel.leccionat</h2>
+			<h2 class="titul">Curs sel.leccionat</h2>
 						
 			<table id='tabla'>
 				<tr>

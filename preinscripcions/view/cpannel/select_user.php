@@ -20,7 +20,7 @@
 		?>
 		
 		<section id="content">
-			<h2>Cerca d'usuari</h2>
+			<h2 class="titul">Cerca d'usuari</h2>
 		
 			<form method="POST">
 				<label>Cercar usuari per DNI</label>

@@ -93,6 +93,10 @@ h3,
 	background-color: red;
 }
 
+.edit{
+	background-color: blue;
+}
+
 .verCurso{
 	box-shadow: 2px 5px 5px grey;
 	background-color: #F2F2F2;

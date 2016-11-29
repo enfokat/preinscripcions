@@ -28,7 +28,7 @@
 		</section>
 
 		<section id="content">
-			<h2>Llistat dels Usuaris registrats</h2>
+			<h2 class="titul">Llistat dels Usuaris registrats</h2>
 						
 			<table id='tabla'>
 				<tr>

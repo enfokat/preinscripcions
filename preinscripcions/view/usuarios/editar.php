@@ -147,10 +147,12 @@
 				</select>
 				<br/><br/><br/>		
 				
-				<input type="submit" name="modificar" value="Salvar canvis"/>
-				<input type="reset" name="reset" value="Cancelar"/>
+				<button class="buttonForm save"  type="submit" name="modificar" value="Salvar canvis"><img src="images/guardar.png"> Guardar</button>
+				<button class="buttonForm reset"  type="reset" name="reset" value="cancelar"><img src="images/borrar.png"> Cancel.lar</button>
+
 			</form>
 				<br/><br/><br/>	
+				<hr>
 							<form  method="post" action="index.php?controlador=Usuario&operacion=baja&parametro=<?php echo $usuario->id; ?>">
 										<h3>Baixa del Servei</h3>
 										<p>Si dessitjes esborrar el teu compte d' aquest sistema, fes click en el botÃ³ de sota, totes les teves inscripcions seran esborrades automÃ¡ticament.</p>
