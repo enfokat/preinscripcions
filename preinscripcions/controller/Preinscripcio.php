@@ -228,7 +228,26 @@ class Preinscripcio extends Controller{
 		}
 	}
 	
+	public function expXml(){
+		$this->load('model/PreinscripcioModel.php');
+		//$this->load('libraries/xml_library.php');
 	
+		if(!Login::isAdmin())
+			throw new Exception ("has de ser administrador");
+	
+			$preinscripcion = PreinscripcioModel::verPreinscripcionsAdm();
+			$xml = PreinscripcioModel::toXML($preinscripcion);
+	
+			if(!empty($_POST['descargar']))
+				header('Content-Disposition:attachment; file=preinscripcions.xml');
+			else
+				header('Content-type:text/xml; charset=utf-8');
+
+
+			$datos = array();
+			$datos['xml'] = $xml;
+			$this->load_view('view/xml.php', $datos);
+	}
 	
 }
 	

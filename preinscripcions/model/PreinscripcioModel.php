@@ -35,7 +35,7 @@ class PreinscripcioModel{
 		}
 		
 		//muestra toda la lista
-		public function verPreinscripcionsAdm($id=0){
+		public function verPreinscripcionsAdm(){
 			
 			//realizar consulta sin filtro
 			$consulta = "SELECT * FROM preinscripcions AS pre
@@ -117,6 +117,27 @@ class PreinscripcioModel{
 					WHERE id_usuari=$this->id_usuari AND id_curs=$this->id_curs;";
 		
 		return Database::get()->query($consulta);
+	}
+	
+	public static function toXML($lista){
+		$xml = new DOMDocument("1.0","utf-8");
+		$xml->preserveWhiteSpace = false;
+		$xml->formatOutput = true;
+	
+		$preinscripcions = $xml ->createElement('preinscripcions');
+		$preinscripcions->setAttribute('xmlns','http://fakens.com/preinscripcions');
+	
+		foreach($lista as $p){
+			$preinscripcio = $xml->createElement('preinscripcio');
+	
+			foreach($p as $campo=>$valor)
+				$preinscripcio->appendChild($xml->createElement($campo, $valor));
+	
+			$preinscripcions->appendChild($preinscripcio);
+		}
+	
+		$xml->appendChild($preinscripcions);
+		return $xml->saveXML();
 	}
 }
 
