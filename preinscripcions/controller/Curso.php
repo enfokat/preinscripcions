@@ -170,10 +170,12 @@ class Curso extends Controller{
 			
 			$conexion = Database::get();
 			$c = @$conexion->real_escape_string($_POST['cercaCurs']);
+
 			
 			$datos['cerca'] = CursoModel::getCurso2($c);
 
 			$this->load_view('view/cpannel/borradoCurso.php', $datos);
+
 
 		}
 		
