@@ -102,15 +102,29 @@ class Curso extends Controller{
 	public function admModificar(){
 	
 		$this->load('model/CursoModel.php');
-	
-		$datos = array();
-		$datos['usuario'] = Login::getUsuario();
-		
 		$conexion = Database::get();
 		$c = @$conexion->real_escape_string($_POST['cercaCurs']);
+		
+		$resultado = CursoModel::getCurso2($c);
+		
+		//si no vienen datos por POST
+		if(empty ($_POST['cercaCurs'] )){
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$this->load_view('view/cpannel/editCurso.php', $datos);
+		}
 
-		$datos['cerca'] = CursoModel::getCurso2($c);
-		$this->load_view('view/cpannel/editCurso.php', $datos);
+		//si vienen por POST y devuelve NULL
+		elseif($resultado == NULL)
+			throw new Exception('No Existeix el curs sol.licitat');
+		
+		//si vienen por POST y devuelve resultado
+		else{
+			$datos = array();
+			$datos['usuario'] = Login::getUsuario();
+			$datos['cerca'] = $resultado; 
+			$this->load_view('view/cpannel/editCurso.php', $datos);
+		}
 	}
 	
 	
