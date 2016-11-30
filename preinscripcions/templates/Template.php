@@ -72,7 +72,7 @@
 						<?php }	?>
 					</nav>
 				<?php }
-				
+				 
 	
 		//PONE EL PIE DE PAGINA
 		public static function footer(){	?>
