@@ -50,7 +50,7 @@
 				<label> Nivell d'estudis:</label>
 				<select name="estudis">
 					<option></option>
-					<option value="0">Sense Estudis</option>
+					<option selected value="0">Sense Estudis</option>
 					<option value="1">Educació Primaria</option>
 					<option value="2">Educació Secondaria</option>
 					<option value="3">Cicles Formatius Grau Mitjà</option>
@@ -60,12 +60,12 @@
 				</select><br/><br/>
 				
 				<label>Situació Laboral:</label><br/><br/>
-					<input type="radio" name="situacio_laboral" value="0"/> <label>Desempleat</label> 
+					<input type="radio" name="situacio_laboral" value="0" checked/> <label>Desempleat</label> 
 					<input type="radio" name="situacio_laboral" value="1"/> <label>Empleat</label> 
 				<br/><br/>
 				
 				<label>¿Rep alguna prestació?</label><br/><br/>
-				<input type="radio" name="prestacio" value="1"/> <label>SÍ</label> 
+				<input type="radio" name="prestacio" value="1" checked/> <label>SÍ</label> 
 				<input type="radio" name="prestacio" value="0"/> <label>NO</label> 
 					
 <br/><br/><br/>
