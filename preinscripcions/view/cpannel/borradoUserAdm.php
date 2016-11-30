@@ -19,15 +19,17 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-		<section>
+		<section id="content">
+		
+	
 			<form method="POST">
 				<label>Cercar usuari per DNI</label>
 				<input type="text" name="cercaUsuari"/>
 				<input type="submit" name="cercadorUsuaris" value="cercar"/>
 			</form>
-		</section>
+		
 
-		<section id="content">
+			<?php if(!empty($cerca)){?>		
 			<h2 class="titul">Llistat dels Usuaris registrats</h2>
 						
 			<table id='tabla'>
@@ -39,9 +41,7 @@
 					<th>Email</th>
 					<th>Esborrar</th>
 				</tr>	
-		<?php		
-		
-				
+				<?php		
 					echo "<tr>";
 					echo@ "<td>$cerca->nom</td>";
 					echo@ "<td>$cerca->cognom1</td>";
@@ -50,10 +50,9 @@
 					echo@ "<td>$cerca->email</td>";
 					echo@ "<td><a href='index.php?controlador=Usuario&operacion=bajaUserAdm&parametro=$cerca->dni'>Esborrar</a></td>";
 					echo "</tr>";
-						
-		
-		?>
+				?>
 			</table>
+			<?php }?>
 
 		</section>
 		

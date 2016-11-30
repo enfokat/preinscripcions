@@ -159,94 +159,35 @@
 			
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
-		
-			$u = @$_POST['cercaUsuari'];
 			
-			$datos['cerca'] = UsuarioModel::getUsuario($u);					
-			
-			$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
-			
-		}
-		
-		public function admBorrar2(){
-			
-			//if si post OK --> llama a la vista confirm
-			if(@$_POST['cerca']){
+			//si no vienen datos por POST
+			if(empty($_POST['cercaUsuari'])){
+				$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
 				
-				$this->load('model/UsuarioModel.php');
-					
-				$datos = array();
-				$datos['usuario'] = Login::getUsuario();
-				
-				$u = @$_POST['cercaUsuari'];
+			//si vienen los datos del usuario por POST
+			}
+			
+			if(!empty($_POST['cercaUsuari'])){
+				$u = $_POST['cercaUsuari'];
 					
 				$datos['cerca'] = UsuarioModel::getUsuario($u);
-					throw new exception('No existeix  el DNI');
 					
-				$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
-				if(empty($_POST['borrar'])){
-					$datos = array();
-					$datos['usuario'] = Login::getUsuario();
-					$datos['cerca'] = $cerca;
-					$this->load_view('view/usuarios/borrar.php', $datos);
-				}else{
-						
-					if(!$preinscripcion->eliminarPreinscripcio())
-						throw new Exception("S'ha produït un error a l'esborrar");
+				if ($datos['cerca'] == NULL)
+					throw new Exception("No Existeix l'usuari");
 				
-						$datos = array();
-						$datos['usuario'] = Login::getUsuario();
-						$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
-						$this->load_view('view/exito.php', $datos);
-				}
-			}
-			//else muestra this load
-			else{
-				$this->load('model/UsuarioModel.php');
-					
-				$datos = array();
-				$datos['usuario'] = Login::getUsuario();
-					
 				$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
-			}
-			
-			
-			
-			
-			
-			if(empty($_POST['borrar'])){
-				$datos = array();
-				$datos['usuario'] = Login::getUsuario();
-				//$datos['preinscripcions'] = $preinscripcion;
-				//$this->load_view('view/usuarios/borrar.php', $datos);
-			}else{
-					
-				if(!$preinscripcion->eliminarPreinscripcio())
-					throw new Exception("S'ha produït un error a l'esborrar");
-						
-					$datos = array();
-					$datos['usuario'] = Login::getUsuario();
-					$datos['mensaje'] = 'ESBORRAT CORRECTAMENT';
-					//	$this->load_view('view/exito.php', $datos);
 						
 			}
-				
-			if(empty($datos['cerca']))
-				throw new Exception ("aquest dni no existeix");
-		}
-		
-		
-		
-		
+		}		
 		
 		public function bajaUserAdm($dni=0){
 			
 			$this->load('model/UsuarioModel.php');
 			$u = UsuarioModel::getUsuario($dni);
+				
+			if(empty($u))
+				throw new Exception("No s'ha trobat la preinscripció");
 			
-		if(empty($u))
-			throw new Exception("No s'ha trobat la preinscripció");
-		
 			if(empty($_POST['borrar'])){
 				$datos = array();
 				$datos['usuario'] = Login::getUsuario();
@@ -256,14 +197,15 @@
 			
 			if(!$u->borrar())
 				throw new Exception("S'ha produït un error a l'esborrar!");
-
+	
 			$datos = array();
 			$datos['usuario'] = Login::getUsuario();
 			$datos['mensaje'] = 'ESBORRAT OK';
 			$this->load_view('view/exito.php', $datos);
-
+	
 			}
 		}
+		
 
 		public function admModificar(){
 

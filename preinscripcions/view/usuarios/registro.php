@@ -70,7 +70,7 @@
 					
 <br/><br/><br/>
 				
-				<button class="buttonForm save"  type="button"  name="guardar" value="guardar"><img src="images/guardar.png"> Registrar-me</button>
+				<button class="buttonForm save"  type="submit"  name="guardar" value="guardar"><img src="images/guardar.png"> Registrar-me</button>
 				<button class="buttonForm reset"  type="reset"  name="reset" value="esborrar"><img src="images/borrar.png"> Cancel.lar</button>
 
 			</form>

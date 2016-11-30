@@ -116,7 +116,7 @@ class Curso extends Controller{
 
 		//si vienen por POST y devuelve NULL
 		elseif($resultado == NULL)
-			throw new Exception('No Existeix el curs sol.licitat');
+			throw new Exception('No Existeix el curs sol·licitat');
 		
 		//si vienen por POST y devuelve resultado
 		else{
