@@ -59,7 +59,7 @@
 						<?php } ?>	
 						<?php if($usuario){?>
 							<li><a href="index.php?controlador=Preinscripcio&operacion=listarPreinscripcio">Les Meves preinscripcions</a></li>
-							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Mis Dades</a></li>
+							<li><a href="index.php?controlador=Usuario&operacion=modificacion&parametro=<?php echo $usuario->id; ?>">Dades Personals</a></li>
 						<?php } ?>	
 						</ul>
 						<?php 
@@ -80,7 +80,7 @@
 				<p>  
 					<a href="index.php?controlador=Welcome&operacion=about">Acerca de...</a>   ||   <a href="index.php?controlador=Welcome&operacion=privacitat">Privacitat</a>
 					<a class="center" href="index.php">Pre-Inscripcions - CIFO del Vallès</a>
-					<a class="right" href="">Robs Micro Framework</a> 
+					<a class="right"  target="blank"  href="http://www.robertsallent.com/">Robs Micro Framework</a> 
          		</p>
 			</footer>
 		<?php }

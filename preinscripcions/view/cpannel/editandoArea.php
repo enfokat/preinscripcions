@@ -20,7 +20,7 @@
 		?>
 		
 		<section id="content">
-			<h2>Agregar Àrea Formativa</h2>
+			<h2 class="titul">Agregar Àrea Formativa</h2>
 			
 			<form method="post">
 				<label>Editar Àrea Formativa</label>

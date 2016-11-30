@@ -58,7 +58,7 @@ class PreinscripcioModel{
 		
 		//muestra las preinscripciones sobre un curso
 		public function verPreinscripcionsAdmCurs($id=0){
-				var_dump($id);
+
 			$consulta = "SELECT * FROM preinscripcions AS pre
 							JOIN usuaris AS u ON pre.id_usuari = u.id
 							JOIN cursos AS c ON pre.id_curs = c.id
@@ -112,6 +112,7 @@ class PreinscripcioModel{
 				
 			return $preinscripcio;
 		}
+		
 	public function eliminarPreinscripcio(){
 		$consulta = "DELETE FROM preinscripcions
 					WHERE id_usuari=$this->id_usuari AND id_curs=$this->id_curs;";

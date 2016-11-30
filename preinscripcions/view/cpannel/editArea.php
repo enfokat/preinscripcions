@@ -29,7 +29,7 @@
 		</section>
 
 		<section id="content">
-			<h2>Area Seleccionada</h2>
+			<h2 class="titul">Area Seleccionada</h2>
 						
 			<table id='tabla'>
 				<tr>

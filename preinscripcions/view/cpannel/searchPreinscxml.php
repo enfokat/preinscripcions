@@ -29,7 +29,6 @@
 					<th>DNI</th>
 					<th>Data Preinscripcio</th>					
 					<th>Telefon</th>
-					<th>Esborrar preinscripcio</th>
 				</tr>	
 		<?php		
 				foreach($preinsc as $p){
@@ -39,22 +38,21 @@
 					$fecha = new DateTime($p->data);					
 					echo "<td>"; echo $fecha->format("d/m/Y"); echo "</td>";					
 					echo "<td>$p->telefon_mobil</td>";
-					echo "<td id='borrar'><a href='index.php?controlador=Preinscripcio&operacion=borrarPreinscAdm&u=$p->id_usuari&c=$p->id_curs'>
-					<img class='icon' src='images/borrar.png' title='Borrar'/>
-					<fidcation</a></td>";
 					echo "</tr>";
 				}	
 						
 		
 		?>
 		</table>
-		<form method="post" style="text-align: right;" action="index.php?controlador=Preinscripcio&operacion=expXml">
-			<span>Descargar</span>
-			<input type="checkbox" name="descargar" value="1"/>
-			<input type="submit" name="axml" value="a XML" />
-		</form>	
+
 
 		</section>
+		
+		<form  class="buttonXML" method="post" style="text-align: right;" action="index.php?controlador=Preinscripcio&operacion=expXml">
+			<label>Descarregar</label>
+			<input  type="checkbox" name="descargar" value="1"/>
+			<button   type="submit" name="axml" value="a XML" ><img src="images/xml.png"  width="40">XML</button>
+		</form>	
 		
 		
 		<?php Template::footer();?>

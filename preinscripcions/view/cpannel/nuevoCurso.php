@@ -20,7 +20,7 @@
 		?>
 		
 		<section id="content">
-			<h2>Agregar Nou Curs</h2>
+			<h2 class="titul">Agregar Nou Curs</h2>
 			<form method="post"  autocomplete="off">
 			
 				<label>Nom:</label>
