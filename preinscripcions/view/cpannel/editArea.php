@@ -19,11 +19,12 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-			<section>
-			<form method="POST">
+		<section>
+		<br/>
+			<form  class="buscadorFondo" method="POST">
 				<label>Cercar Area per ID</label>
-				<input type="text" name="cercaArea"/>
-				<input type="submit" name="cercadorArea" value="cercar"/>
+				<input class="buscador"  type="text" name="cercaArea"/>
+				<button  class="buttonForm search" type="submit" name="cercadorArea" value="cercar"><img  src="images/buscar.png"> Cercar</button>
 			</form>
 		</section>
 
@@ -38,7 +39,7 @@
 		<?php		
 					echo "<tr>";
 					echo@ "<td>$cerca->nom</td>";
-					echo@ "<td><a href='index.php?controlador=Area&operacion=editar&parametro=$cerca->id'>Modificar</a></td>";
+					echo@ "<td><a href='index.php?controlador=Area&operacion=editar&parametro=$cerca->id'><img class='icon' src='images/editar.png'></a></td>";
 					echo "</tr>";
 					
 		?>

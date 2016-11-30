@@ -20,7 +20,7 @@
 		?>
 
 		<section id="content">
-						<h2>Llistat dels Usuaris registrats</h2>
+						<h2 class="titul">Llistat dels Usuaris registrats</h2>
 						
 						<table id='tabla'>
 				<tr>
@@ -29,8 +29,6 @@
 					<th>cognom 2</th>					
 					<th>Dni</th>
 					<th>email</th>
-					<th>Modificar</th>
-					<th>Esborrar</th>
 				</tr>	
 		<?php		
 				foreach($usuarios as $u){
@@ -40,9 +38,6 @@
 					echo "<td>$u->cognom2</td>";
 					echo "<td>$u->dni</td>";
 					echo "<td>$u->email</td>";
-					echo "<td><a href=''>Modificar</a></td>";
-					echo "<td><a href=''>Esborrar</a></td>";
-					echo "<td></td>";
 					echo "</tr>";
 				}			
 		
@@ -50,6 +45,8 @@
 			</table>
 
 		</section>
+		
+		<br/><br/>
 		
 		<?php Template::footer();?>
     </body> 

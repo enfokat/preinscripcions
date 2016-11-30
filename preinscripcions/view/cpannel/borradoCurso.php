@@ -19,11 +19,12 @@
 			Template::menu($usuario); //pone el menú
 		?>
 		
-			<section>
-			<form method="POST">
+		<section>
+			<br/>
+			<form class="buscadorFondo" method="POST">
 				<label>Cercar Curs per Codi</label>
-				<input type="text" name="cercaCurs"/>
-				<input type="submit" name="cercadorCurs" value="cercar"/>
+				<input class="buscador"  type="text" name="cercaCurs"/>
+				<button class="buttonForm search"  type="submit" name="cercadorCurs" value="cercar"><img  src="images/buscar.png"> Cercar</button>
 			</form>
 		</section>
 
@@ -46,7 +47,7 @@
 					echo@ "<td>$cerca->descripcio</td>";
 					echo@ "<td>$cerca->data_inici</td>";
 					echo@ "<td>$cerca->horari</td>";
-					echo@ "<td><a href='index.php?controlador=Curso&operacion=borrado&parametro=$cerca->id'>Esborrar</a></td>";
+					echo@ "<td><a href='index.php?controlador=Curso&operacion=borrado&parametro=$cerca->id'><img class='icon' src='images/borrar.png'></a></td>";
 					echo "</tr>";
 						
 		

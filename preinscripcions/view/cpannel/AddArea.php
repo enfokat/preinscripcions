@@ -21,10 +21,10 @@
 		
 		<section id="content">
 			<h2>Agregar Àrea Formativa</h2>
-			
+			<br/>
 			<form method="post">
 				<label>Nombre Nueva Área Formativa</label>
-				<input name="nom" type="text">
+				<input name="nom"  type="text">
 				<input type="submit" name="guardar" value="Guardar">
 			</form>
 

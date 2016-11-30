@@ -63,6 +63,11 @@ h3,
 	width: 50px;
 }
 
+.buscador{
+	padding: 1%;
+	font-size: 1.1em;
+}
+
 .buttonPrint,
 .buttonInscr{
 	padding: 1%;
@@ -82,7 +87,7 @@ h3,
 	border-radius: 5px 5px 5px 5px;
 	color: black;
 	text-align: center;
-	margin-left: 5%;
+	margin-left: 2%;
 }
 
 .save{
@@ -95,6 +100,19 @@ h3,
 
 .edit{
 	background-color: blue;
+}
+
+.search{
+	background-color: #81BEF7;
+}
+
+.buscadorFondo{
+	background-color: #F2F2F2;
+	padding: 2%;
+	text-align: center;
+	margin-left: 20%;
+	margin-right: 20%;
+	 box-shadow:  2px 4px 4px grey;
 }
 
 .verCurso{

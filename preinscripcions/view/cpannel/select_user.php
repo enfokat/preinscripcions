@@ -22,13 +22,13 @@
 		<section id="content">
 			<h2 class="titul">Cerca d'usuari</h2>
 		
-			<form method="POST">
+			<form class="buscadorFondo" method="POST">
 				<label>Cercar usuari per DNI</label>
-				<input type="text" name="dni"/>
-				<input type="submit" name="cercadorUsuaris" value="cercar"/>
+				<input class="buscador" type="text" name="dni"/>
+				<button  class="buttonForm search"  type="submit" name="cercadorUsuaris" value="cercar"><img  src="images/buscar.png"/> Cercar</button>
 			</form>
 		</section>
-		
+		<br/><br/><br/>
 		<?php Template::footer();?>
     </body> 
 </html>

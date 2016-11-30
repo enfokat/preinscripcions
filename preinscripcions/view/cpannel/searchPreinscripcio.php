@@ -21,10 +21,11 @@
 		
 		<section class="busca">
 			<form method="POST">
-				<label>Cercar Preinscripció per Dni</label>
+				<label>Cercar usuari per DNI </label>
 				<input type="text" name="cercaUsuari"/>
 				<input type="submit" name="cercadorUsuari" value="cercar"/>
 			</form>
+
 
 			<form method="POST">
 				<label>Cercar Preinscripció per Curs</label>

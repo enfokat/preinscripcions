@@ -20,10 +20,11 @@
 		?>
 		
 		<section>
-			<form method="POST">
-				<label>Cercar usuari per DNI</label>
-				<input type="text" name="cercaUsuari"/>
-				<input type="submit" name="cercadorUsuaris" value="cercar"/>
+		<br/>
+			<form class="buscadorFondo" method="POST">
+				<label  class="buscador">Cercar usuari per DNI </label>
+				<input class="buscador"  type="text" name="cercaUsuari"/>
+				<button  class="buttonForm search"  type="submit" name="cercadorUsuaris" value="cercar"><img  src="images/buscar.png"/> Cercar</button>
 			</form>
 		</section>
 
@@ -48,7 +49,7 @@
 					echo@ "<td>$cerca->cognom2</td>";
 					echo@ "<td>$cerca->dni</td>";
 					echo@ "<td>$cerca->email</td>";
-					echo@ "<td><a href='index.php?controlador=Usuario&operacion=editUserAdm&parametro=$cerca->dni'>Modificar</a></td>";
+					echo@ "<td><a href='index.php?controlador=Usuario&operacion=editUserAdm&parametro=$cerca->dni'><img class='icon' src='images/editar.png'></a></td>";
 					echo "</tr>";
 						
 		
