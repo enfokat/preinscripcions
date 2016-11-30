@@ -181,7 +181,7 @@
 				$u = @$_POST['cercaUsuari'];
 					
 				$datos['cerca'] = UsuarioModel::getUsuario($u);
-					throw new exception('No esxite el DNI');
+					throw new exception('No existeix  el DNI');
 					
 				$this->load_view('view/cpannel/borradoUserAdm.php', $datos);
 				if(empty($_POST['borrar'])){
@@ -266,16 +266,31 @@
 		}
 
 		public function admModificar(){
-				
+
 			$this->load('model/UsuarioModel.php');
-				
-			$datos = array();
-			$datos['usuario'] = Login::getUsuario();
-		
-			$u = @$_POST['cercaUsuari'];
-						
-			$datos['cerca'] = UsuarioModel::getUsuario($u);
-			$this->load_view('view/cpannel/editarUserAdm.php', $datos);
+			$conexion = Database::get();
+			$u = @$conexion->real_escape_string($_POST['cercaUsuari']);
+			
+			$resultado = UsuarioModel::getUsuario($u);
+			
+			//si no vienen datos por POST
+			if(empty ($_POST['cercaUsuari'] )){
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$this->load_view('view/cpannel/editarUserAdm.php', $datos);
+			}
+			
+			//si vienen por POST y devuelve NULL
+			elseif($resultado == NULL)
+			throw new Exception('No Existeix el usuari');
+			
+			//si vienen por POST y devuelve resultado
+			else{
+				$datos = array();
+				$datos['usuario'] = Login::getUsuario();
+				$datos['cerca'] = $resultado;
+				$this->load_view('view/cpannel/editarUserAdm.php', $datos);
+			}
 		}
 		
 		
